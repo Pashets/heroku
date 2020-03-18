@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="" />
+    <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Heroku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Heroku.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/templates/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/posts/templates/posts/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +61,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -211,7 +215,7 @@
       <workItem from="1584540660975" duration="1592000" />
       <workItem from="1584542295234" duration="470000" />
       <workItem from="1584543613203" duration="4356000" />
-      <workItem from="1584558895516" duration="5945000" />
+      <workItem from="1584558895516" duration="7742000" />
     </task>
     <servers />
   </component>
@@ -238,22 +242,22 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="419" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1584540227822" />
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1584564031287">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1584566664594">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1584564031287" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1584564031286">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1584566664594" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1584566664594">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1584564031286" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1584564031286">
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1584566664594" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1584566664594">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1584564031286" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1584564031286">
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1584566664594" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1584566664594">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1584564031286" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1584566664594" />
     <state width="1237" height="325" key="GridCell.Tab.1.bottom" timestamp="1584556432142">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -270,16 +274,16 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="325" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1584556432141" />
-    <state x="141" y="134" key="SettingsEditor" timestamp="1584564949466">
+    <state x="141" y="134" key="SettingsEditor" timestamp="1584565602956">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="141" y="134" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1584564949466" />
+    <state x="141" y="134" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1584565602956" />
     <state x="336" y="316" key="com.intellij.ide.util.TipDialog" timestamp="1584558912421">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="336" y="316" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1584558912421" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1584564031272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1584566664587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
