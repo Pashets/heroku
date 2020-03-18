@@ -22,6 +22,7 @@
       <list>
         <option value="$MODULE_DIR$/venv/Lib/site-packages/alembic/templates" />
         <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/posts/templates" />
       </list>
     </option>
   </component>
