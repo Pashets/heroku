@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign in
+{% endblock %}
+
+{% block content_title %}
+    Зарегаться
+{% endblock %}
+
+{% block content %}
+
+
+
+    <form method="post">
+        <table>
+            <tr>
+                <td>Login</td>
+                <td><label>
+                    <input type="text" name="login">
+                </label></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><label>
+                    <input type="password" name="password">
+                </label></td>
+            </tr>
+            <tr>
+                <td>Password retype</td>
+                <td><label>
+                    <input type="password" name="password2">
+                </label></td>
+            </tr>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <tr class=flashes style="color:red">
+                        {% for message in messages %}
+                            <td>{{ message }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endif %}
+            {% endwith %}
+            <tr>
+                <td><a href="{{ url_for('login_page') }}">Login</td>
+                <td><input type="submit" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
