@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Heroku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Heroku.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/templates/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/posts/templates/posts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/blueprint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,7 @@
       <workItem from="1584540660975" duration="1592000" />
       <workItem from="1584542295234" duration="470000" />
       <workItem from="1584543613203" duration="4356000" />
-      <workItem from="1584558895516" duration="7742000" />
+      <workItem from="1584558895516" duration="8542000" />
     </task>
     <servers />
   </component>
