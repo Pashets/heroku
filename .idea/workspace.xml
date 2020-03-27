@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flsk.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Heroku.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/templates/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/posts/templates/posts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Flask server.heroku">
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Heroku" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,7 +152,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models.py" />
+      <option name="SCRIPT_NAME" value="C:\Drovnin\heroku\models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -191,14 +183,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+    <configuration name="Flask" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
       <module name="Flsk" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -221,11 +213,27 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="heroku" type="Python.FlaskServer">
+      <module name="heroku" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Flask server.heroku" />
       <item itemvalue="Flask server.Flsk" />
       <item itemvalue="Flask server.Flask (app.py)" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.models" />
+      <item itemvalue="Python.models_" />
       <item itemvalue="Python.view" />
       <item itemvalue="Python.config" />
     </list>
@@ -235,7 +243,7 @@
         <item itemvalue="Python.config" />
         <item itemvalue="Python.view" />
         <item itemvalue="Flask server.Flask (app.py)" />
-        <item itemvalue="Python.models" />
+        <item itemvalue="Python.models_" />
       </list>
     </recent_temporary>
   </component>
@@ -268,6 +276,7 @@
       <workItem from="1584558895516" duration="8827000" />
       <workItem from="1584728715500" duration="280000" />
       <workItem from="1585285513196" duration="88000" />
+      <workItem from="1585288903861" duration="2850000" />
     </task>
     <servers />
   </component>

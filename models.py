@@ -8,7 +8,11 @@ from app import db, login_manager
 
 def slugify(s):
     pattern = r'[^\w+]'
-    return re.sub(pattern, '-', s)
+    s = re.sub(pattern, '-', s).lower()
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1] == '-':
+            s = s[:i] + s[i + 1:]
+    return s
 
 
 post_tags = db.Table('post_tags',
