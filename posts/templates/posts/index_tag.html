@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ post.title }}
+    Blueprint index Tag page
 {% endblock %}
 
 {% block content_title %}
-    {{ post.title }}
+    Tags
+{% endblock %}
+
+{% block content %}
     <div>
         {% for tag in tags %}
             <a href="{{ url_for('posts.tag_detail', slug=tag.slug) }}" class="btn btn-primary btn-lg active" role="button"
                aria-pressed="true">{{ tag.name }}</a>
         {% endfor %}
     </div>
-{% endblock %}
-
-{% block content %}
-    {{ post.body }}
 {% endblock %}

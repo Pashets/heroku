@@ -32,7 +32,7 @@ class Post(db.Model):
         super(Post, self).__init__(*args, **kwargs)
         self.generate_slug()
 
-    tags = db.relationship('Tag', secondary=post_tags)
+    tags = db.relationship('Tag', secondary=post_tags, backref=db.backref('posts', lazy='dynamic'))
 
     def generate_slug(self):
         if self.title:

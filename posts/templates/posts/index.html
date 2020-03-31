@@ -16,5 +16,8 @@
             <a href="{{ url_for('posts.post_detail', slug=post.slug) }}">{{ post.title }}</a>
         </p>
     {% endfor %}
+    <H2><a href="{{ url_for('posts.index_tag') }}" style="color: mediumvioletred;align-content: end" >Tags</a></H2>
+
 
 {% endblock %}
+
