@@ -9,51 +9,15 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        <table>
-            <tr>
-                <td>Title:</td>
-                <td><label>
-                    <input type="text" name="title">
-                </label></td>
-            </tr>
-            <tr>
-                <td>Body your post:</td>
-                <td><label>
-                    <textarea name="body">
-                    </textarea>
-                </label></td>
-            </tr>
-            <tr>
-                <td>Tags:</td>
-                <td><label>
-                    <input type="text" name="tags" placeholder="Write tags split ','">
-                </label></td>
-            </tr>
-            <tr>
-                <td>All tags:</td>
-                <td>
-                    {% for tag in tags %}
-                        {{ tag.name }}
-                    {% endfor %}
-                </td>
-
-            </tr>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <tr class=flashes style="color:red">
-                        <td></td>
-                        {% for message in messages %}
-                            <td>{{ message }}</td>
-                        {% endfor %}
-                    </tr>
-                {% endif %}
-            {% endwith %}
-
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Create post"></td>
-            </tr>
-        </table>
-    </form>
+    <div class="col-md-6">
+        <form action="{{ url_for('posts.create_post') }}" method="post">
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label(class='control-label') }}
+                    {{ field(class='form-control') }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Create Post</button>
+        </form>
+    </div>
 {% endblock %}
