@@ -288,7 +288,7 @@
       <workItem from="1585288903861" duration="3341000" />
       <workItem from="1585331384757" duration="19000" />
       <workItem from="1585679582971" duration="7612000" />
-      <workItem from="1585883234249" duration="12633000" />
+      <workItem from="1585883234249" duration="12907000" />
     </task>
     <servers />
   </component>
@@ -346,8 +346,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/posts/blueprint.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="3" />
+          <line>64</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

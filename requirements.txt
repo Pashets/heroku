@@ -1,3 +1,4 @@
+wtforms
 aiohttp==3.6.2
 alembic==1.4.1
 async-timeout==3.0.1
