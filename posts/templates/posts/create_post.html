@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Login
+    Create Post
 {% endblock %}
 
 {% block content_title %}
-    Залогиниться
+    Here you can create your posts
 {% endblock %}
 
 {% block content %}
     <form method="post">
         <table>
             <tr>
-                <td>Login</td>
+                <td>Title:</td>
                 <td><label>
-                    <input type="text" name="login">
+                    <input type="text" name="title">
                 </label></td>
             </tr>
             <tr>
-                <td>Password</td>
+                <td>Body your post:</td>
                 <td><label>
-                    <input type="password" name="password">
+                    <textarea name="body">
+                    </textarea>
                 </label></td>
+            </tr>
+            <tr>
+                <td>Tags:</td>
+                <td><label>
+                    <input type="text" name="tags" placeholder="Write tags split ','">
+                </label></td>
+            </tr>
+            <tr>
+                <td>All tags:</td>
+                <td>
+                    {% for tag in tags %}
+                        {{ tag.name }}
+                    {% endfor %}
+                </td>
+
             </tr>
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -36,7 +52,7 @@
 
             <tr>
                 <td></td>
-                <td><input type="submit" value="Login"></td>
+                <td><input type="submit" value="Create post"></td>
             </tr>
         </table>
     </form>
