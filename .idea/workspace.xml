@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/posts/blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/blueprint.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -289,7 +288,7 @@
       <workItem from="1585883234249" duration="13702000" />
       <workItem from="1585954573337" duration="101000" />
       <workItem from="1585967798691" duration="714000" />
-      <workItem from="1586053114014" duration="3226000" />
+      <workItem from="1586053114014" duration="3454000" />
     </task>
     <servers />
   </component>
@@ -347,7 +346,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/posts/blueprint.py</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

@@ -20,6 +20,7 @@ def index():
                 if tag.name.lower() == q.lower():
                     posts += [post]
         posts += Post.query.filter(Post.title.contains(q) | Post.body.contains(q)).order_by(Post.created.desc())
+        posts = list(set(posts))
     else:
         posts = Post.query.order_by(Post.created.desc())
     return render_template('posts/index.html', posts=posts)
