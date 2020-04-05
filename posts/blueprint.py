@@ -14,7 +14,12 @@ posts = Blueprint('posts', __name__, template_folder='templates', static_url_pat
 def index():
     q = request.args.get('q')
     if q:
-        posts = Post.query.filter(Post.title.contains(q) | Post.body.contains(q)).order_by(Post.created.desc())
+        posts = []
+        for post in Post.query.all():
+            for tag in post.tags:
+                if tag.name.lower() == q.lower():
+                    posts += [post]
+        posts += Post.query.filter(Post.title.contains(q) | Post.body.contains(q)).order_by(Post.created.desc())
     else:
         posts = Post.query.order_by(Post.created.desc())
     return render_template('posts/index.html', posts=posts)
