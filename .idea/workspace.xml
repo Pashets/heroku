@@ -83,7 +83,7 @@
       <recent name="C:\Drovnin\Flsk\posts" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Heroku" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +106,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="heroku" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Flsk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,28 +142,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flsk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Drovnin\heroku\models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -227,14 +227,15 @@
     <list>
       <item itemvalue="Flask server.heroku" />
       <item itemvalue="Flask server.Flsk" />
-      <item itemvalue="Python.models" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.view" />
       <item itemvalue="Python.config" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.config" />
@@ -280,7 +281,7 @@
       <workItem from="1586053114014" duration="4679000" />
       <workItem from="1586075570130" duration="31000" />
       <workItem from="1586101215468" duration="2098000" />
-      <workItem from="1588762931470" duration="65000" />
+      <workItem from="1588762931470" duration="513000" />
     </task>
     <servers />
   </component>
@@ -304,34 +305,42 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" />
-    <state x="395" y="295" key="#com.intellij.fileTypes.FileTypeChooser" />
-    <state x="395" y="295" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.984@0.0.1280.984" />
-    <state x="359" y="106" key="#main" />
-    <state x="359" y="106" key="#main/0.0.1280.984@0.0.1280.984" />
-    <state x="419" y="246" key="FileChooserDialogImpl" />
-    <state x="419" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom" />
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="325" key="GridCell.Tab.1.bottom" />
-    <state width="1237" height="325" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="325" key="GridCell.Tab.1.center" />
-    <state width="1237" height="325" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="325" key="GridCell.Tab.1.left" />
-    <state width="1237" height="325" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" />
-    <state width="1237" height="325" key="GridCell.Tab.1.right" />
-    <state width="1237" height="325" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" />
-    <state x="141" y="134" key="SettingsEditor" />
-    <state x="141" y="134" key="SettingsEditor/0.0.1280.984@0.0.1280.984" />
-    <state x="336" y="316" key="com.intellij.ide.util.TipDialog" />
-    <state x="336" y="316" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588763032382" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state x="395" y="295" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588763032382" />
+    <state x="395" y="295" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state x="359" y="106" key="#main" timestamp="1588763032382" />
+    <state x="359" y="106" key="#main/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state x="419" y="246" key="FileChooserDialogImpl" timestamp="1588763032382" />
+    <state x="419" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state width="618" height="263" key="GridCell.Tab.0.bottom" timestamp="1588763403829">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="618" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1588763403829" />
+    <state width="618" height="263" key="GridCell.Tab.0.center" timestamp="1588763403829">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="618" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1588763403829" />
+    <state width="618" height="263" key="GridCell.Tab.0.left" timestamp="1588763403829">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="618" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1588763403829" />
+    <state width="618" height="263" key="GridCell.Tab.0.right" timestamp="1588763403829">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="618" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1588763403829" />
+    <state width="1237" height="325" key="GridCell.Tab.1.bottom" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.center" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.left" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.right" timestamp="1588763032382" />
+    <state width="1237" height="325" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state x="141" y="134" key="SettingsEditor" timestamp="1588763032382" />
+    <state x="141" y="134" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
+    <state x="336" y="316" key="com.intellij.ide.util.TipDialog" timestamp="1588763032382" />
+    <state x="336" y="316" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1588763032382" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -349,6 +358,7 @@
     <SUITE FILE_PATH="coverage/Heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1584566664587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1586102591803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$config.coverage" NAME="config Coverage Results" MODIFIED="1584728923091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Heroku$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1588763403818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$test.coverage" NAME="test Coverage Results" MODIFIED="1585887046487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
