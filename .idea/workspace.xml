@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/blueprint.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,17 +44,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Drovnin\heroku\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1VrMa2D6vm2YF4AhmW0meHwWC8f" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
@@ -82,18 +73,6 @@
       <recent name="C:\Drovnin\Flsk\templates" />
       <recent name="C:\Drovnin\Flsk\posts" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -237,13 +216,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.config" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.models" />
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.view" />
-      <item itemvalue="Flask server.Flsk" />
       <item itemvalue="Flask server.heroku" />
+      <item itemvalue="Flask server.Flsk" />
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.view" />
+      <item itemvalue="Python.config" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
@@ -295,11 +274,12 @@
       <workItem from="1586153745328" duration="2743000" />
       <workItem from="1586190223018" duration="3078000" />
       <workItem from="1586324757406" duration="18000" />
+      <workItem from="1588861967887" duration="122000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
@@ -309,13 +289,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
