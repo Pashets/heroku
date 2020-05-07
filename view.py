@@ -2,8 +2,8 @@ from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import app, db
-from models import User
+from app import app, db, user_datastore
+from models import User, Role
 
 
 @app.route('/')
@@ -35,19 +35,24 @@ def login_page():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
-    login = request.form.get('login')
+    email = request.form.get('email')
     password = request.form.get('password')
     password2 = request.form.get('password2')
 
     if request.method == 'POST':
-        if not (login or password or password2):
+        if not (email or password or password2):
             flash('Please, fill all fields')
         elif password != password2:
             flash('Passwords are not equal!')
         else:
             hash_pwd = generate_password_hash(password)
-            new_user = User(login=login, password=hash_pwd)
-            db.session.add(new_user)
+
+            # new_user = User(email=email, password=password)
+            new_user = user_datastore.create_user(email=email, password=password)
+            role = Role.query.filter(Role.name == 'user').first()
+            user_datastore.add_role_to_user(new_user, role)
+            # new_user.roles = [Role.query.filter(Role.name == 'user').first()]
+            # db.session.add(new_user)
             db.session.commit()
 
             return redirect(url_for('login_page'))

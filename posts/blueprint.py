@@ -1,12 +1,11 @@
 import traceback
 
-from flask import Blueprint, request, flash, redirect, url_for
+from flask import Blueprint, request, redirect, url_for
 from flask import render_template
-from flask_login import login_required
 from .forms import PostForm
 from app import db
 from models import Post, Tag
-
+from flask_security import login_required
 posts = Blueprint('posts', __name__, template_folder='templates', static_url_path='posts')
 
 
@@ -14,25 +13,35 @@ posts = Blueprint('posts', __name__, template_folder='templates', static_url_pat
 def index():
     q = request.args.get('q')
     if q:
-        posts = Post.query.join(Tag.posts).filter(Post.title.contains(q) | Post.body.contains(q) | Tag.posts.contains(
-            Post.title)).order_by(Post.created.desc())
-        Tag.query.with_parent(Post)
-        # posts = Post.query.filter(
-        #     Post.title.contains(q) | Post.body.contains(q) | Tag.query.filter_by(name=q).first() in Post.tags).order_by(
-        #     Post.created.desc())
-        # for post in Post.query.all():
-        #     if post not in posts:
-        #         for tag in post.tags:
-        #             if tag.name.lower() == q.lower():
-        #                 posts.insert(post)
-        # posts = Post.query.filter(Post)
+        posts = []
+        for post in Post.query.all():
+            if post not in posts:
+                for tag in post.tags:
+                    if tag.name.lower() == q.lower():
+                        posts.append(post)
+        posts += Post.query.filter(
+            Post.title.contains(q) | Post.body.contains(q)).order_by(
+            Post.created.desc())
     else:
         posts = Post.query.order_by(Post.created.desc())
     return render_template('posts/index.html', posts=posts)
 
 
+# @posts.route('/<slug>/edit/', methods=['GET', 'POST'])
+# def edit_post(slug):
+#     post = Post.query.filter(Post.slug == slug).first()
+#     if request.method == 'POST':
+#         form = PostForm(formdata=request.form, obj=post)
+#         form.populate_obj(post)
+#         db.session.commit()
+#
+#         return redirect(url_for('posts.post_detail', slug=post.slug))
+#
+#     form = PostForm(obj=post)
+#     return render_template('posts/edit_post.html', post=post, form=form)
+
+
 @posts.route('/<slug>')
-@login_required
 def post_detail(slug):
     post = Post.query.filter(Post.slug == slug).first()
     if post:
@@ -43,14 +52,12 @@ def post_detail(slug):
 
 
 @posts.route('/tags/<slug>')
-@login_required
 def tag_detail(slug):
     tag = Tag.query.filter_by(slug=slug).first()
     return render_template('posts/tag_detail.html', tag=tag, posts=tag.posts)
 
 
 @posts.route('/tags')
-@login_required
 def index_tag():
     tags = Tag.query.all()
     return render_template('posts/index_tag.html', tags=tags)
