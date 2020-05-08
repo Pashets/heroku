@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import app, db, user_datastore
+from app import app, db, user_datastore, login_manager
 from models import User, Role
 
 
@@ -13,6 +13,7 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
+    return render_template('login.html')
     login = request.form.get('login')
     password = request.form.get('password')
 
@@ -45,16 +46,10 @@ def register_page():
         elif password != password2:
             flash('Passwords are not equal!')
         else:
-            hash_pwd = generate_password_hash(password)
-
-            # new_user = User(email=email, password=password)
             new_user = user_datastore.create_user(email=email, password=password)
             role = Role.query.filter(Role.name == 'user').first()
             user_datastore.add_role_to_user(new_user, role)
-            # new_user.roles = [Role.query.filter(Role.name == 'user').first()]
-            # db.session.add(new_user)
             db.session.commit()
-
             return redirect(url_for('login_page'))
     return render_template('register.html')
 
@@ -68,7 +63,32 @@ def logout():
 
 @app.after_request
 def redirect_to_signin(response):
+    # users = User.query.all()
+    # role = Role.query.filter(Role.name == "user").first()
+    # for user in users:
+    #     if not user.roles:
+    #         user_datastore.add_role_to_user(user, role)
+    #     db
     if response.status_code == 401:
         return redirect(url_for('login_page') + '?next=' + request.url)
 
     return response
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(AttributeError)
+# @app.register_error_handler
+def catch_when_registration_end(e):
+    return redirect(url_for('login_page'))
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    """Check if user is logged-in on every page load."""
+    if user_id is not None:
+        return User.query.get(user_id)
+    return None

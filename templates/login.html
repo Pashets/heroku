@@ -5,39 +5,23 @@
 {% endblock %}
 
 {% block content_title %}
-    Залогиниться
+    {{ _('Login') }}
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        <table>
-            <tr>
-                <td>Login</td>
-                <td><label>
-                    <input type="text" name="login">
-                </label></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><label>
-                    <input type="password" name="password">
-                </label></td>
-            </tr>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <tr class=flashes style="color:red">
-                        <td></td>
-                        {% for message in messages %}
-                            <td>{{ message }}</td>
-                        {% endfor %}
-                    </tr>
-                {% endif %}
-            {% endwith %}
 
-            <tr>
-                <td><a href=" {{ url_for('register_page') }}">Register</a></td>
-                <td><input type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+    <div class="col-md-6">
+        {% from "security/_macros.html" import render_field_with_errors, render_field %}
+        {% include "security/_messages.html" %}
+        <form action="{{ url_for('login_page') }}" method="POST" name="login_user_form">
+            {{ login_user_form.hidden_tag() }}
+            {{ render_field_with_errors(login_user_form.email, class='form-control') }}
+            {{ render_field_with_errors(login_user_form.password, class='form-control') }}
+            {{ render_field_with_errors(login_user_form.remember) }}
+            {{ render_field(login_user_form.next) }}
+            {{ render_field(login_user_form.submit, class='btn btn-success') }}
+            <a class="btn btn-info" href="{{ url_for('register_page') }}">Register</a>
+        </form>
+        {% include "security/_menu.html" %}
+    </div>
 {% endblock %}

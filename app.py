@@ -13,9 +13,16 @@ from flask_security import current_user
 from flask import redirect, url_for, request
 
 app = Flask(__name__)
-app.secret_key = 'some secret soup4533534453454'
 app.config.from_object(Configuration)
 db = SQLAlchemy(app)
+
+# from sqlalchemy import text
+#
+# sql = text('alter table "user" auto_increment=1')
+# result = db.engine.execute(sql)
+# names = [row[0] for row in result]
+# print(names)
+
 migrate = Migrate(app, db)
 
 login_manager = LoginManager(app)
