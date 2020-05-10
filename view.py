@@ -1,5 +1,7 @@
+import sqlalchemy
 from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from app import app, db, user_datastore, login_manager
@@ -42,9 +44,13 @@ def register_page():
 
     if request.method == 'POST':
         if not (email or password or password2):
-            flash('Please, fill all fields')
+            flash('Please, fill all fields!')
         elif password != password2:
             flash('Passwords are not equal!')
+        elif email[0].isdigit():
+            flash('Email must start with a letter!')
+        elif IntegrityError:
+            flash('This email already registered!')
         else:
             new_user = user_datastore.create_user(email=email, password=password)
             role = Role.query.filter(Role.name == 'user').first()

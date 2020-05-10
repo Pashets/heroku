@@ -1,6 +1,6 @@
 from app import app, User
 from app import db
-# print(User.__tablename__)
+
 from posts.blueprint import posts
 
 import view
