@@ -10,11 +10,18 @@
 
 
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
 </head>
+
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%">
+    {% block header %}
+
+    {% endblock %}
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%">
     <a class="navbar-brand" href={{ url_for('index') }}>Main</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,8 +64,19 @@
             </li>
         </ul>
     </div>
-</nav>
-<div class="container" style="padding-top: 5%">
+</nav> -->
+
+
+
+
+
+
+{% block Main %}
+  
+{% endblock %}
+
+<!-- <div class="container" style="padding-top: 5%">
+    
     <h1>
         {% block content_title %}
 
@@ -68,59 +86,8 @@
     {% block content %}
 
     {% endblock %}
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
+  
+</div> -->
 
-</div>
 </body>
 </html>

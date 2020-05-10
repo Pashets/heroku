@@ -1,0 +1,143 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/*a {
+  color: #676767;
+}
+
+a:hover {  
+  color: #FA0B0B
+}
+
+a, a:hover {
+  -webkit-transition: all.8s ease;
+  -o-transition: all.8s ease;
+  -moz-transition: all.8s ease;
+  -ms-transition: all.8s ease;
+  transition: all.8s ease;
+}*/
+
+html,
+body {
+  height: 100%;  /*Очень важный параметр! */                             
+  background-color: #444444;
+  font-family: Arial, "Helvetica Neue", Helvetica, sens-serif;
+  color: #CCCCCC;
+  font-size: 20px;
+
+}
+
+.wrapper {
+  min-height: 100vh; /*Очень важно указать именно min*/
+  display: flex;
+  flex-direction: column;
+}
+
+/*-----------------------------------------Шапка------------------------------------------------*/
+
+/*----------------------------------------Навигация------------------------------------------------*/
+
+/*----------------------------------------Содержание---------------------------------------------*/
+
+.fullscreen {
+  min-height: 100vh;
+  background-color: #303030;
+  display: flex;
+  padding: 20px 0;
+}
+
+.fullscreen__two {
+  background-color: #5C5C5C;
+}
+
+.fullscreen__bg {
+background: url('https://images.wallpaperscraft.ru/image/neon_podsvetka_temnyj_133133_3840x2400.jpg') center / cover no-repeat fixed;
+}
+
+.fullscreen__body {
+  flex: 1 1 auto;
+  max-width: 1000px;
+  margin: 0px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.fullscreen__title {
+  font-size: 50px;
+  margin: 0px 0px 20px 0px;
+}
+
+.fullscreen__text {
+  ont-size: 25px;
+  margin: 0px 0px 20px 0px;
+}
+
+.fullscreen__link {
+  display: inline-block;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  background-color: #575757;
+  align-self: center;
+  padding: 0px 20px;
+}
+
+.content {
+
+}
+
+.content__body {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 30px 20px;
+}
+
+.content__body p {
+  margin: 0px 0px 20px 0px;
+}
+
+.content__body p:last-child{
+  margin: 0;
+}
+
+.footer {
+  background-color: #181818;
+  text-align: center;
+}
+
+.footer__body {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 30px 20px;
+}
+/*-------------------------------------------Подвал---------------------------------------------*/
+
+/*<div class="main">
+  <nav class="header">
+      <div class="logo">
+          <img src="<!-- https://s5-listing.ozstatic.by/400400/758/566/10/10566758_0.jpg -->" alt="logo">
+      </div>
+      <div class="div">
+        <ul>
+          <li><a href="{{ url_for('index') }}" class="menu-link">Main</a></li>
+          <li><a href="{{ url_for('posts.index') }}" class="menu-link">Blog</a></li>
+          <li><a href="{{ url_for('posts.create_post') }}" class="menu-link">Create post</a></li>
+          <li><a href="/admin" class="menu-link">Admin</a></li>
+          <li><a href="#" class="menu-link"></a></li>
+          <li><a href="#" class="menu-link"></a></li>
+        </ul>
+      </div>
+  </nav>
+</div>*
+
