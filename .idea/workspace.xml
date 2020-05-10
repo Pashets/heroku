@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224708fd-35a3-4ebc-bb8f-d4a597449f64" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+>>>>>>> 8088d0cb27501a2e219c0baad9050bba02cd994d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +49,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Drovnin\heroku\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1VrMa2D6vm2YF4AhmW0meHwWC8f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
@@ -83,7 +80,11 @@
       <recent name="C:\Drovnin\Flsk\posts" />
     </key>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.main">
+=======
   <component name="RunManager" selected="Python.main (1)">
+>>>>>>> 8088d0cb27501a2e219c0baad9050bba02cd994d
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Heroku" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,13 +281,21 @@
       <workItem from="1585967798691" duration="714000" />
       <workItem from="1586053114014" duration="4679000" />
       <workItem from="1586075570130" duration="31000" />
+<<<<<<< HEAD
+      <workItem from="1586101215468" duration="2929000" />
+      <workItem from="1586153745328" duration="2743000" />
+      <workItem from="1586190223018" duration="3078000" />
+      <workItem from="1586324757406" duration="18000" />
+      <workItem from="1588861967887" duration="122000" />
+=======
       <workItem from="1586101215468" duration="2098000" />
       <workItem from="1588762931470" duration="1265000" />
+>>>>>>> 8088d0cb27501a2e219c0baad9050bba02cd994d
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
@@ -296,13 +305,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588763032382" />
@@ -347,8 +355,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/posts/blueprint.py</url>
-          <line>70</line>
+          <line>75</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/posts/blueprint.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/posts/blueprint.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -358,7 +376,14 @@
     <SUITE FILE_PATH="coverage/Heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1584566664587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1586102591803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$config.coverage" NAME="config Coverage Results" MODIFIED="1584728923091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+<<<<<<< HEAD
+    <SUITE FILE_PATH="coverage/heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1586190637272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/heroku$test.coverage" NAME="test Coverage Results" MODIFIED="1585887046487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/heroku$heroku.coverage" NAME="heroku Coverage Results" MODIFIED="1585680963449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Heroku$main.coverage" NAME="main Coverage Results" MODIFIED="1584566664587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
     <SUITE FILE_PATH="coverage/Heroku$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1588764176687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/heroku$test.coverage" NAME="test Coverage Results" MODIFIED="1585887046487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> 8088d0cb27501a2e219c0baad9050bba02cd994d
   </component>
 </project>
