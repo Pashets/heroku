@@ -4,7 +4,7 @@ from flask_login import login_user, login_required, logout_user
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import app, db, user_datastore, login_manager
+from app import app, db, login_manager
 from models import User, Role
 
 
@@ -13,14 +13,18 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/myProjects')
+def startprpage():
+    return render_template('myProjects.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template('login.html')
-    login = request.form.get('login')
+    email = request.form.get('email')
     password = request.form.get('password')
 
-    if login and password:
-        user = User.query.filter_by(login=login).first()
+    if email and password:
+        user = User.query.filter_by(email=email).first()
 
         if user and check_password_hash(user.password, password):
             login_user(user)
@@ -47,16 +51,23 @@ def register_page():
             flash('Please, fill all fields!')
         elif password != password2:
             flash('Passwords are not equal!')
-        elif email[0].isdigit():
-            flash('Email must start with a letter!')
-        elif IntegrityError:
-            flash('This email already registered!')
+        # elif email[0].isdigit():
+        #     flash('Email must start with a letter!')
         else:
-            new_user = user_datastore.create_user(email=email, password=password)
-            role = Role.query.filter(Role.name == 'user').first()
-            user_datastore.add_role_to_user(new_user, role)
-            db.session.commit()
-            return redirect(url_for('login_page'))
+            try:
+                user = User(email=email, password=password)
+                role = Role.query.filter(Role.name == 'user').first()
+                user.roles = [role]
+                role.users += [user]
+                # new_user = user_datastore.create_user(email=email, password=password)
+                # role = Role.query.filter(Role.name == 'user').first()
+                # user_datastore.add_role_to_user(new_user, role)
+                db.session.add_all([user, role])
+                db.session.commit()
+                return redirect(url_for('login_page'))
+            except IntegrityError:
+                flash('This email already registered!')
+
     return render_template('register.html')
 
 
