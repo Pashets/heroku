@@ -62,14 +62,19 @@ roles_users = db.Table('roles_users',
                        db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
                        )
 
+project_users = db.Table('project_users',
+                       db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+                       db.Column('project_id', db.Integer(), db.ForeignKey('project.id'))
+                       )
+
 
 class User(db.Model, UserMixin):
-
     id = db.Column(db.Integer(), primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(255), nullable=False)
     active = db.Column(db.Boolean())
     roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
+    projects = db.relationship('Project', secondary=project_users, backref=db.backref('users', lazy='dynamic'))
 
     def __repr__(self):
         return f'<User: {self.id}, {self.email}>'
@@ -77,6 +82,15 @@ class User(db.Model, UserMixin):
 
 class Role(db.Model, RoleMixin):
     id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(255))
+
+    def __repr__(self):
+        return self.name
+
+
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))
 

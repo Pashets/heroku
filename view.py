@@ -12,6 +12,11 @@ from models import User, Role
 def index():
     return render_template('index.html')
 
+@app.route('/myProjects')
+@login_required
+def startprpage():
+    return render_template('myProjects.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
