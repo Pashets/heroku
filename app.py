@@ -64,7 +64,7 @@ class TagAdminView(AdminMixin, BaseModelView):
 
 
 class ProjectAdminView(AdminMixin, BaseModelView):
-    form_columns = []
+    form_columns = ['name', 'description', 'users']
 
 
 admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminView(name='Home'))

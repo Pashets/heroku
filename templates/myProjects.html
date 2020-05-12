@@ -34,11 +34,20 @@
             <div class="col-md-5" style="padding-left: 0px; padding-right: 0px"></div>
 
         </div>
-        <p style="padding-top: 1%">
-            <button type="button" class="btn btn-sm btn-outline-dark btn-block">
-        <p class="text-left" style="font-size: 14px; margin-top: 10px">Проект 1</p></button></p>
-        <p>sss</p>
-        <p>sss</p>
-        <p>sss</p>
+        {% if not projects %}
+            <p style="padding-top: 1%">
+                    <button type="button" class="btn btn-sm btn-outline-dark btn-block">
+                <p class="text-left" style="font-size: 14px; margin-top: 10px">Нема проектов у вас!</p>
+                </button>
+                </p>
+        {% else %}
+            {% for project in projects %}
+                <p style="padding-top: 1%">
+                    <button type="button" class="btn btn-sm btn-outline-dark btn-block">
+                <p class="text-left" style="font-size: 14px; margin-top: 10px">{{ project.name }}</p>
+                </button>
+                </p>
+            {% endfor %}
+        {% endif %}
     </div>
 {% endblock %}

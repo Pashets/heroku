@@ -1,6 +1,10 @@
+import traceback
+
 import sqlalchemy
 from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
+from flask_security import current_user
+
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -12,15 +16,16 @@ from models import User, Role
 def index():
     return render_template('index.html')
 
+
 @app.route('/myProjects')
 @login_required
 def startprpage():
-    return render_template('myProjects.html')
-
-
-@app.route('/myProjects')
-def startprpage():
-    return render_template('myProjects.html')
+    try:
+        print(User.query.filter(User.email == current_user.email).first().projects)
+    except:
+        print(traceback.format_exc())
+    return render_template('myProjects.html',
+                           projects=User.query.filter(User.email == current_user.email).first().projects)
 
 
 @app.route('/login', methods=['GET', 'POST'])
