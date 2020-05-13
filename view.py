@@ -17,17 +17,6 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/myProjects')
-@login_required
-def startprpage():
-    try:
-        print(User.query.filter(User.email == current_user.email).first().projects)
-    except:
-        print(traceback.format_exc())
-    return render_template('myProjects.html',
-                           projects=User.query.filter(User.email == current_user.email).first().projects)
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     email = request.form.get('email')

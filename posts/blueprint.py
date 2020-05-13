@@ -92,4 +92,4 @@ def create_post():
             print(traceback.format_exc())
             return '<h1>Something went wrong<h1>' + traceback.format_exc()
     form = PostForm()
-    return render_template('posts/create_post.html', form=form, tags=Tag.query.all())
+    return render_template('posts/create_post.html', form=form)

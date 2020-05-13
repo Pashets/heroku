@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 
-from flask_security import UserMixin, RoleMixin
+from flask_security import UserMixin, RoleMixin, current_user
 
 from app import db, login_manager
 
@@ -26,7 +26,7 @@ class Post(db.Model):
     title = db.Column(db.String(140))
     slug = db.Column(db.String(140), unique=True)
     body = db.Column(db.Text)
-    created = db.Column(db.DateTime, default=datetime.now())
+    created = db.Column(db.DateTime, default=datetime.now)
 
     def __init__(self, *args, **kwargs):
         super(Post, self).__init__(*args, **kwargs)
@@ -63,9 +63,9 @@ roles_users = db.Table('roles_users',
                        )
 
 project_users = db.Table('project_users',
-                       db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
-                       db.Column('project_id', db.Integer(), db.ForeignKey('project.id'))
-                       )
+                         db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+                         db.Column('project_id', db.Integer(), db.ForeignKey('project.id'))
+                         )
 
 
 class User(db.Model, UserMixin):
@@ -93,6 +93,18 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))
+    quantity_participants = db.Column(db.Integer)
+    slug = db.Column(db.String(140), unique=True)
+    created_by = db.Column(db.String(100))
+    created = db.Column(db.DateTime, default=datetime.now)
+
+    def __init__(self, *args, **kwargs):
+        super(Project, self).__init__(*args, **kwargs)
+        self.generate_slug()
+
+    def generate_slug(self):
+        if self.name:
+            self.slug = slugify(self.name)
 
     def __repr__(self):
         return self.name
