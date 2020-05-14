@@ -1,28 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Sign in
+    Sign up
 {% endblock %}
 
-{% block styles %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-{% endblock %}
-
-{% block content_title %}
-    Зарегаться
-{% endblock %}
-
-{% block content %}
+{% block main %}
 
     <form method="post">
         <table>
             <tr>
                 <td>Email</td>
-                <td><label>
-                    <input type="text" name="email">
-                </label></td>
+                <td>
+                    <label>
+                        <input type="text" name="email">
+                    </label>
+                </td>
             </tr>
             <tr>
                 <td>Password</td>
@@ -38,7 +30,8 @@
             </tr>
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
-                    <tr class=flashes style="color:red">
+                    {#                    <tr class=flashes style="color:red">#}
+                    <tr class=flashes>
                         {% for message in messages %}
                             <td>{{ message }}</td>
                         {% endfor %}
@@ -46,7 +39,7 @@
                 {% endif %}
             {% endwith %}
             <tr>
-                <td><a href="{{ url_for('login_page') }}">Login</td>
+                <td><a href="{{ url_for('login_page') }}">Login</a></td>
                 <td><input type="submit" value="Register"></td>
             </tr>
         </table>

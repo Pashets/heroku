@@ -6,76 +6,68 @@
 
         {% block title %}
 
-        {% endblock %} | Flask app
+        {% endblock %}
 
 
     </title>
-{% block styles %}
 
-{% endblock %}
+    {% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    {% endblock %}
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%">
-    <a class="navbar-brand" href={{ url_for('index') }}>Main</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('posts.index') }}">Blog <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('posts.create_post') }}">Create post</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('projects.index') }}">My projects</a>
-            </li>
-
-            <li class="nav-item">
-                {% if current_user.has_role('admin') %}
-                    <a class="nav-link" href="/admin">Admin</a>
-                {% endif %}
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0" method="get">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q"
-                   value="{{ request.args.get('q','') }}">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav">
-            <li class="nav-item active">
+<!-- Оболочка -->
+<div class="wrapper">
+    <!-- Хедер -->
+    <header class="header">
+        <div class="main-overlay"></div>
+        <div class="header__body">
+            <div class="logo">
+                <img class="lo" src="{{ url_for('static', filename='logo1.png') }}" alt="Логотип" width="100%"
+                     height="100%">
+            </div>
+            <div class="menu">
+                <ul class="spisok">
+                    <li><a href="{{ url_for('index') }}" class="menu-link">Main</a></li>
+                    <li><a href="#" class="menu-link">Additionally</a></li>
+                    {% if current_user.has_role('admin') %}
+                        <li><a class="nav-link" href="/admin">Admin</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('projects.index') }}" class="menu-link">Projects</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="user">
+                <div class="name">
+                    <p>{{ current_user.email }}</p>
+                </div>
                 {% if current_user.has_role('user') or current_user.has_role('admin') %}
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    <div class="sign_up">
+                        <a href="{{ url_for('logout') }}" class="enter-link">Logout</a>
+                    </div>
                 {% else %}
-                    <a class="nav-link" href="{{ url_for('login_page') }}">Login</a>
+                    <div class="sign_up">
+                        <a href="{{ url_for('login_page') }}" class="enter-link">Log in</a>
+                    </div>
+                    <div class="sign_up">
+                        <a href="{{ url_for('register_page') }}" class="enter-link">Sign up</a>
+                    </div>
                 {% endif %}
-                <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('register_page') }}">Sign in <span
-                        class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="container-fluid" style="padding-left: 0px; padding-right: 0px; margin-right:0px;margin-left:0px;padding-top: 5%">
-    <h1>
-        {% block content_title %}
-
-        {% endblock %}
-    </h1>
-
-    {% block content %}
+            </div>
+        </div>
+    </header>
+    {% block main %}
 
     {% endblock %}
-
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer__body">
+            Все права не защищены можете<br>спиздить<br>этот сайт хоть сейчас.
+        </div>
+    </footer>
 </div>
 </body>
 </html>

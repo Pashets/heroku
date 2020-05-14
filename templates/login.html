@@ -4,30 +4,35 @@
     Login
 {% endblock %}
 
-{% block styles %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% block main %}
 
-{% endblock %}
-
-{% block content_title %}
-    {{ _('Login') }}
-{% endblock %}
-
-{% block content %}
-
-    <div class="col-md-6">
-        {% from "security/_macros.html" import render_field_with_errors, render_field %}
-        {% include "security/_messages.html" %}
-        <form action="{{ url_for('login_page') }}" method="POST" name="login_user_form">
-            {{ login_user_form.hidden_tag() }}
-            {{ render_field_with_errors(login_user_form.email, class='form-control') }}
-            {{ render_field_with_errors(login_user_form.password, class='form-control') }}
-            {{ render_field_with_errors(login_user_form.remember) }}
-            {{ render_field(login_user_form.next) }}
-            {{ render_field(login_user_form.submit, class='btn btn-success') }}
-            <a class="btn btn-info" href="{{ url_for('register_page') }}">Register</a>
-        </form>
-        {% include "security/_menu.html" %}
-    </div>
+    {% from "security/_macros.html" import render_field_with_errors, render_field %}
+    {% include "security/_messages.html" %}
+    <form action="{{ url_for('login_page') }}" method="POST" name="login_user_form">
+        {{ login_user_form.hidden_tag() }}
+        <table>
+            <tr>
+                <td>{{ render_field_with_errors(login_user_form.email) }}</td>
+            </tr>
+            <tr>
+                <td>{{ render_field_with_errors(login_user_form.password) }}</td>
+            </tr>
+            <tr>
+                <td>{{ render_field(login_user_form.submit) }}</td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('register_page') }}">Register</a></td>
+            </tr>
+        </table>
+        {#        {{ render_field_with_errors(login_user_form.email) }}#}
+        {#            {{ render_field_with_errors(login_user_form.email, class='form-control') }}#}
+        {#        {{ render_field_with_errors(login_user_form.password) }}#}
+        {#            {{ render_field_with_errors(login_user_form.password, class='form-control') }}#}
+{#        {{ render_field_with_errors(login_user_form.remember) }}#}
+{#        {{ render_field(login_user_form.next) }}#}
+        {#        {{ render_field(login_user_form.submit) }}#}
+        {#            {{ render_field(login_user_form.submit, class='btn btn-success') }}#}
+{#        <a class="btn btn-info" href="{{ url_for('register_page') }}">Register</a>#}
+    </form>
+{#    {% include "security/_menu.html" %}#}
 {% endblock %}

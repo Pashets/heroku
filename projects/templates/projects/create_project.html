@@ -4,26 +4,15 @@
     Create Project
 {% endblock %}
 
-{% block styles %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-{% endblock %}
-
-{% block content_title %}
-    Here you can create your projects
-{% endblock %}
-
-{% block content %}
-    <div class="col-md-6">
+{% block main %}
         <form action="{{ url_for('projects.create_project') }}" method="post">
             {% for field in form %}
-                <div class="form-group">
-                    {{ field.label(class='control-label') }}
-                    {{ field(class='form-control') }}
-                </div>
+                    {{ field.label() }}
+{#                    {{ field.label(class='control-label') }}#}
+{#                    {{ field(class='form-control') }}#}
+                    {{ field() }}
             {% endfor %}
-            <button type="submit" class="btn btn-success">Create Project</button>
+            <button type="submit">Create Project</button>
         </form>
-    </div>
 {% endblock %}

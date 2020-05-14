@@ -1,6 +1,6 @@
 {% extends 'projects/project_detail.html' %}
 
-{% block content %}
+{% block main %}
     {{ super() }}
     Users:
     <ul>
@@ -10,7 +10,7 @@
     </ul>
     {% if project not in current_user.projects %}
         <form action="{{ url_for('projects.users', slug=project.slug) }}" method="post">
-            <button type="submit" class="btn btn-success">Join to us!</button>
+            <button type="submit">Join to us!</button>
         </form>
     {% endif %}
 {% endblock %}
