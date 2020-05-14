@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Blueprint index page
+    All projects
 {% endblock %}
 
 {% block styles %}
@@ -11,17 +11,13 @@
 {% endblock %}
 
 {% block content_title %}
-    Posts
+    Projects
 {% endblock %}
 
 {% block content %}
-
-    {% for post in posts %}
-
+    {% for project in projects %}
         <p>
-            <a href="{{ url_for('posts.post_detail', slug=post.slug) }}">{{ post.title }}</a>
+            <a href="{{ url_for('projects.project_detail', slug=project.slug) }}">{{ project.name }}</a>
         </p>
     {% endfor %}
-    <H2><a href="{{ url_for('posts.index_tag') }}" style="color: mediumvioletred">Tags</a></H2>
-    <H2><a href="{{ url_for('projects.all_projects') }}">And now projects!</a></H2>
 {% endblock %}

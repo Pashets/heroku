@@ -1,0 +1,9 @@
+{% extends 'projects/project_detail.html' %}
+
+{% block content %}
+    {{ super() }}
+    <p>Info</p>
+    <p>Name: {{ project.name }}</p>
+    <p>Description: {{ project.description }}</p>
+    <p>Quantity of participants: {{ project.quantity_participants }}</p>
+{% endblock %}

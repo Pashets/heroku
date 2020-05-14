@@ -27,28 +27,25 @@
                 </nav>
             </div>
 
-            <a class="col-md-2 col-md-offset-5" style="padding-left: 0px; padding-right: 0px"  href="{{ url_for('projects.create_project') }}">
-{#                <form action="{{ url_for('projects.create_project') }}#">#}
-                    <button type="button" class="btn btn-default btn-block">Создать проект</button>
-{#                </form>#}
+            <a class="col-md-2 col-md-offset-5" style="padding-left: 0px; padding-right: 0px"
+               href="{{ url_for('projects.create_project') }}">
+                <button type="button" class="btn btn-default btn-block">Создать проект</button>
             </a>
-
-            <div class="col-md-5" style="padding-left: 0px; padding-right: 0px"></div>
 
         </div>
         {% if not projects %}
             <p style="padding-top: 1%">
-                    <button type="button" class="btn btn-sm btn-outline-dark btn-block">
-                <p class="text-left" style="font-size: 14px; margin-top: 10px">Нема проектов у вас!</p>
-                </button>
-                </p>
+                <button type="button" class="btn btn-sm btn-outline-dark btn-block">
+            <p class="text-left" style="font-size: 14px; margin-top: 10px">Нема проектов у вас!</p>
+            </button>
+            </p>
         {% else %}
             {% for project in projects %}
-                <p style="padding-top: 1%">
+                <a style="padding-top: 1%" href="{{ project.slug }}">
                     <button type="button" class="btn btn-sm btn-outline-dark btn-block">
-                <p class="text-left" style="font-size: 14px; margin-top: 10px">{{ project.name }}</p>
-                </button>
-                </p>
+                        <p class="text-left" style="font-size: 14px; margin-top: 10px">{{ project.name }}</p>
+                    </button>
+                </a>
             {% endfor %}
         {% endif %}
     </div>

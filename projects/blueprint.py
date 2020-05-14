@@ -26,23 +26,10 @@ def create_project():
         name = request.form['name']
         description = request.form['description']
         quantity_participants = request.form['quantity_participants']
-        # tags = []
-        # all_to_add = []
-        # for name in tags_name.split():
-        #     tag = Tag.query.filter(Tag.name.contains(name)).first_or_404()
-        #     if tag:
-        #         tags += [tag]
-        #         continue
-        #     tag = Tag(name=name)
-        #     all_to_add += [tag]
-        #     tags += [tag]
         try:
             user = User.query.filter(User.email == current_user.email).first()
             project = Project(name=name, description=description, quantity_participants=quantity_participants,
-                              created_by=str(user))
-            # post.tags = tags
-            # all_to_add.append(post)
-            # db.session.add_all(all_to_add)
+                              created_by=user.email)
             user.projects.append(project)
             db.session.add_all([project, user])
             db.session.commit()
@@ -53,3 +40,56 @@ def create_project():
             return '<h1>Something went wrong<h1>' + traceback.format_exc()
     form = ProjectForm()
     return render_template('projects/create_project.html', form=form)
+
+
+@projects.route('/<slug>')
+@login_required
+def project_detail(slug):
+    project = Project.query.filter(Project.slug == slug).first_or_404()
+    if project:
+        return render_template('projects/project_detail.html', project=project)
+    else:
+        return "<h1>This project is not exist</h1>"
+
+
+@projects.route('/<slug>/info')
+def project_info(slug):
+    project = Project.query.filter(Project.slug == slug).first_or_404()
+    if project:
+        return render_template('projects/project_info.html', project=project)
+    else:
+        return "<h1>This project is not exist</h1>"
+
+
+@projects.route('/<slug>/tasks')
+def tasks(slug):
+    project = Project.query.filter(Project.slug == slug).first_or_404()
+    if project:
+        return render_template('projects/project_tasks.html', project=project)
+    else:
+        return "<h1>This project is not exist</h1>"
+
+
+@projects.route('/<slug>/users', methods=['GET', 'POST'])
+def users(slug):
+    project = Project.query.filter(Project.slug == slug).first_or_404()
+
+    if request.method == 'POST':
+        try:
+            user = User.query.filter(User.email==current_user.email).first()
+            user.projects += [project]
+            db.session.add(user)
+            # db.session.add(user)
+            db.session.commit()
+        except:
+            print(traceback.format_exc())
+    if project:
+        return render_template('projects/project_users.html', project=project)
+    else:
+        return "<h1>This project is not exist</h1>"
+
+
+@projects.route('/all_projects')
+def all_projects():
+    projects = Project.query.all()
+    return render_template('projects/all_projects.html', projects=projects)
