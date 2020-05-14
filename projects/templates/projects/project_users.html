@@ -1,0 +1,16 @@
+{% extends 'projects/project_detail.html' %}
+
+{% block main %}
+    {{ super() }}
+    Users:
+    <ul>
+    {% for user in project.users %}
+        <li>{{ user.email }}</li>
+    {% endfor %}
+    </ul>
+    {% if project not in current_user.projects %}
+        <form action="{{ url_for('projects.users', slug=project.slug) }}" method="post">
+            <button type="submit">Join to us!</button>
+        </form>
+    {% endif %}
+{% endblock %}

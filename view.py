@@ -1,21 +1,20 @@
+import traceback
+
 import sqlalchemy
 from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
+from flask_security import current_user
+
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import app, db, login_manager
+from app import app, db, login_manager, user_datastore
 from models import User, Role
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
-
-@app.route('/myProjects')
-def startprpage():
-    return render_template('myProjects.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -51,18 +50,11 @@ def register_page():
             flash('Please, fill all fields!')
         elif password != password2:
             flash('Passwords are not equal!')
-        # elif email[0].isdigit():
-        #     flash('Email must start with a letter!')
         else:
             try:
-                user = User(email=email, password=password)
+                new_user = user_datastore.create_user(email=email, password=password)
                 role = Role.query.filter(Role.name == 'user').first()
-                user.roles = [role]
-                role.users += [user]
-                # new_user = user_datastore.create_user(email=email, password=password)
-                # role = Role.query.filter(Role.name == 'user').first()
-                # user_datastore.add_role_to_user(new_user, role)
-                db.session.add_all([user, role])
+                user_datastore.add_role_to_user(new_user, role)
                 db.session.commit()
                 return redirect(url_for('login_page'))
             except IntegrityError:
