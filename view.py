@@ -10,7 +10,6 @@ from models import User, Role
 def index():
     return render_template('index.html')
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     login = request.form.get('login')
