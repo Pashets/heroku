@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 
-from flask_security import UserMixin, RoleMixin
+from flask_security import UserMixin, RoleMixin, current_user
 
 from app import db, login_manager
 
@@ -26,7 +26,7 @@ class Post(db.Model):
     title = db.Column(db.String(140))
     slug = db.Column(db.String(140), unique=True)
     body = db.Column(db.Text)
-    created = db.Column(db.DateTime, default=datetime.now())
+    created = db.Column(db.DateTime, default=datetime.now)
 
     def __init__(self, *args, **kwargs):
         super(Post, self).__init__(*args, **kwargs)
@@ -62,6 +62,11 @@ roles_users = db.Table('roles_users',
                        db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
                        )
 
+project_users = db.Table('project_users',
+                         db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+                         db.Column('project_id', db.Integer(), db.ForeignKey('project.id'))
+                         )
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
@@ -69,12 +74,40 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255), nullable=False)
     active = db.Column(db.Boolean())
     roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
+    projects = db.relationship('Project', secondary=project_users, backref=db.backref('users', lazy='dynamic'))
+
+    def __repr__(self):
+        return f'<User: {self.id}, {self.email}>'
 
 
 class Role(db.Model, RoleMixin):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))
+
+    def __repr__(self):
+        return self.name
+
+
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(255))
+    quantity_participants = db.Column(db.Integer)
+    slug = db.Column(db.String(140), unique=True)
+    created_by = db.Column(db.String(100))
+    created = db.Column(db.DateTime, default=datetime.now)
+
+    def __init__(self, *args, **kwargs):
+        super(Project, self).__init__(*args, **kwargs)
+        self.generate_slug()
+
+    def generate_slug(self):
+        if self.name:
+            self.slug = slugify(self.name)
+
+    def __repr__(self):
+        return self.name
 
 
 @login_manager.user_loader

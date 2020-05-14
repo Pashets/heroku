@@ -1,0 +1,8 @@
+{% extends 'projects/project_detail.html' %}
+
+{% block main %}
+    {{ super() }}
+    {% if current_user.email == project.created_by %}
+        <p><a href="#">Create task</a></p>
+    {% endif %}
+{% endblock %}

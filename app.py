@@ -13,9 +13,16 @@ from flask_security import current_user
 from flask import redirect, url_for, request
 
 app = Flask(__name__)
-app.secret_key = 'some secret soup4533534453454'
 app.config.from_object(Configuration)
 db = SQLAlchemy(app)
+
+# from sqlalchemy import text
+#
+# sql = text('alter table "user" auto_increment=1')
+# result = db.engine.execute(sql)
+# names = [row[0] for row in result]
+# print(names)
+
 migrate = Migrate(app, db)
 
 login_manager = LoginManager(app)
@@ -56,11 +63,16 @@ class TagAdminView(AdminMixin, BaseModelView):
     form_columns = ['name', 'posts']
 
 
+class ProjectAdminView(AdminMixin, BaseModelView):
+    form_columns = ['name', 'description', 'users', 'slug', 'created_by', 'created']
+
+
 admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminView(name='Home'))
 admin.add_view(PostAdminView(Post, db.session))
 admin.add_view(TagAdminView(Tag, db.session))
 admin.add_view(AdminView(User, db.session))
 admin.add_view(AdminView(Role, db.session))
+admin.add_view(ProjectAdminView(Project, db.session))
 
 ### Flask-security
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
