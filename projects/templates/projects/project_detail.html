@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ project.name }}
+{% endblock %}
+
+
+{#{% block content_title %}#}
+{#    {{ project.name }}#}
+{##}
+{#{% endblock %}#}
+
+{% block main %}
+    <a href="{{ url_for('projects.project_info', slug=project.slug) }}">Info</a>
+    <a href="{{ url_for('projects.tasks', slug=project.slug) }}">Tasks</a>
+    <a href="{{ url_for('projects.users', slug=project.slug) }}">Users</a>
+{% endblock %}
