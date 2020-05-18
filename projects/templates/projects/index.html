@@ -33,6 +33,11 @@
           <button type="button" class="btn btn-default btn-block">Создать проект</button>
         </a>
 
+        <a class="col-md-2 col-md-offset-3" style="padding-left: 0px; padding-right: 0px; padding-bottom: 1%"
+          href="{{ url_for('projects.all_projects') }}">
+          <button type="button" class="btn btn-default btn-block">Другие проекты</button>
+        </a>
+
         {% if not projects %}
             <p style="padding-top: 1%; padding-bottom: 1%">
                 <button type="button" class="btn btn-sm btn-outline-dark btn-block">
