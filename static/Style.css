@@ -118,7 +118,7 @@ background: url('https://images.wallpaperscraft.ru/image/neboskreby_zdaniya_vid_
 }*/
 
 .header {
-  background-color: rgba(48,48,48,0.9);
+  background-color: rgba(48,48,48,0.8);
   width: 100%
   text-align: center;
   background: url(https://images.wallpaperscraft.ru/image/more_siluet_odinochestvo_131354_3840x2400.jpg) no-repeat center;
@@ -131,7 +131,7 @@ background: url('https://images.wallpaperscraft.ru/image/neboskreby_zdaniya_vid_
   display: flex;
   justify-content:space-between;
   flex-wrap:wrap;
-  background: rgba(78,78,78,0.1);
+  background: rgba(78,78,78,0.2);
 }
 
 .logo {

@@ -9,60 +9,6 @@
         {% endblock %}
 
     </title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
-</head>
-
-<body>
-
-    <!-- Оболочка -->
-    <div class="wrapper">
-      <!-- Хедер -->
-      <header class="header">
-        <div class="main-overlay"></div>
-        <div class="header__body">
-          <div class="logo">
-            <img class="lo" src="{{ url_for('static', filename='logo1.png') }}" alt="Логотип" width="100%" height="100%">  
-          </div>
-           <div class="menu">
-            <ul class="spisok">
-              <li><a href="#" class="menu-link">Main</a></li>
-              <li><a href="#" class="menu-link">Additionally</a></li>
-              <li><a href="#" class="menu-link">Projects</a></li>
-            </ul>
-          </div>
-          <div class="user">
-            <div class="name">
-              <p>User Name</p>
-            </div>
-            <div class="sign_up">
-                <a href="#" class="enter-link">Log in</a>
-            </div>
-            <div class="sign_up">
-                <a href="#" class="enter-link">Sign up</a>
-            </div>
-          </div>
-        </div>
-      </header>
-        {% block Main %}
-      
-        {% endblock %}
-      <!-- Подвал -->
-      <footer class="footer">
-        <div class="footer__body">
-          Все права не защищены можете<br>спиздить<br>этот сайт хоть сейчас.
-        </div>
-      </footer>
-    </div>
-<!-- {% block content_title %}
-
-    {% endblock %}
-
-{% block content %}
-
-  {% endblock %} -->
-=======
 
     {% block styles %}
         <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
@@ -122,6 +68,5 @@
         </div>
     </footer>
 </div>
->>>>>>> master
 </body>
 </html>
