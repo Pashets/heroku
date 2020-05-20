@@ -43,7 +43,6 @@ def create_project():
 
 
 @projects.route('/<slug>')
-@login_required
 def project_detail(slug):
     project = Project.query.filter(Project.slug == slug).first_or_404()
     if project:
@@ -76,10 +75,11 @@ def users(slug):
 
     if request.method == 'POST':
         try:
-            user = User.query.filter(User.email==current_user.email).first()
+            if current_user.is_anonymous:
+                return redirect(url_for('login_page') + '?next=' + request.url)
+            user = User.query.filter(User.email == current_user.email).first()
             user.projects += [project]
             db.session.add(user)
-            # db.session.add(user)
             db.session.commit()
         except:
             print(traceback.format_exc())
