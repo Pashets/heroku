@@ -31,11 +31,16 @@
             <div class="menu">
                 <ul class="spisok">
                     <li><a href="{{ url_for('index') }}" class="menu-link">Main</a></li>
-                    <li><a href="#" class="menu-link">Additionally</a></li>
+                    <li><a href="{{ url_for('additionally') }}" class="menu-link">Additionally</a></li>
                     {% if current_user.has_role('admin') %}
                         <li><a class="nav-link" href="/admin">Admin</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('projects.index') }}" class="menu-link">Projects</a></li>
+                        <li><a
+                                href="{% if current_user.has_role('user') %}
+                                      {{ url_for('projects.index') }}
+                                      {% else %}
+                                      {{ url_for('projects.all_projects') }}
+                                      {% endif %}" class="menu-link">Projects</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -64,7 +69,8 @@
     <!-- Подвал -->
     <footer class="footer">
         <div class="footer__body">
-            Все права не защищены можете<br>спиздить<br>этот сайт хоть сейчас.
+            <p>© Project Management System</p>
+            <p>Все права защищены.</p>
         </div>
     </footer>
 </div>

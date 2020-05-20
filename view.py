@@ -16,6 +16,14 @@ from models import User, Role
 def index():
     return render_template('index.html')
 
+
+
+@app.route('/additionally')
+def additionally():
+    return render_template('additionally.html')
+
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     email = request.form.get('email')
@@ -71,15 +79,8 @@ def logout():
 
 @app.after_request
 def redirect_to_signin(response):
-    # users = User.query.all()
-    # role = Role.query.filter(Role.name == "user").first()
-    # for user in users:
-    #     if not user.roles:
-    #         user_datastore.add_role_to_user(user, role)
-    #     db
     if response.status_code == 401:
         return redirect(url_for('login_page') + '?next=' + request.url)
-
     return response
 
 
@@ -89,7 +90,6 @@ def page_not_found(e):
 
 
 @app.errorhandler(AttributeError)
-# @app.register_error_handler
 def catch_when_registration_end(e):
     return redirect(url_for('login_page'))
 
