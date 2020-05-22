@@ -33,19 +33,22 @@
                 {# Кнопка: Информация #}
                 <a href="{{ url_for('projects.project_info', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Информация</button>
+                            type="button" class="btn btn-default btn-block">Информация
+                    </button>
                 </a>
 
                 {# Кнопка: Задания #}
                 <a href="{{ url_for('projects.tasks', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Задания</button>
+                            type="button" class="btn btn-default btn-block">Задания
+                    </button>
                 </a>
 
                 {# Кнопка: Работники #}
                 <a href="{{ url_for('projects.users', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Работники</button>
+                            type="button" class="btn btn-default btn-block">Работники
+                    </button>
                 </a>
             </div>
 
@@ -58,7 +61,8 @@
                 <p style="color: #000000; padding-left: 10px; font-weight: 900; font-size: 24px">Общая информация:</p>
                 <p style="color: #000000; padding-left: 10px;">Название проекта: {{ project.name }}</p>
                 <p style="color: #000000; padding-left: 10px;">Краткое описание: {{ project.description }}</p>
-                <p style="color: #000000; padding-left: 10px;">Количество работников в проекте: {{ project.quantity_participants }}</p>
+                <p style="color: #000000; padding-left: 10px;">Количество работников в
+                    проекте: {{ project.quantity_participants }}</p>
                 <p style="margin-bottom: 250px"></p>
             </div>
         </div>

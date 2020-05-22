@@ -43,21 +43,21 @@ def create_project():
 
 
 @projects.route('/<slug>')
-def project_detail(slug):
-    project = Project.query.filter(Project.slug == slug).first_or_404()
-    if project:
-        return render_template('projects/project_detail.html', project=project)
-    else:
-        return "<h1>This project is not exist</h1>"
-
-
-@projects.route('/<slug>/info')
 def project_info(slug):
     project = Project.query.filter(Project.slug == slug).first_or_404()
     if project:
         return render_template('projects/project_info.html', project=project)
     else:
         return "<h1>This project is not exist</h1>"
+
+
+# @projects.route('/<slug>/info')
+# def project_info(slug):
+#     project = Project.query.filter(Project.slug == slug).first_or_404()
+#     if project:
+#         return render_template('projects/project_info.html', project=project)
+#     else:
+#         return "<h1>This project is not exist</h1>"
 
 
 @projects.route('/<slug>/tasks')
