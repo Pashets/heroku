@@ -2,11 +2,11 @@ import traceback
 
 from flask import Blueprint, request, redirect, url_for
 from flask import render_template
-from .forms import ProjectForm
+from .forms import ProjectForm, TaskForm
 from flask_security import current_user
 
 from app import db
-from models import Post, Tag, User, Project
+from models import Post, Tag, User, Project, Task
 from flask_security import login_required
 
 projects = Blueprint('projects', __name__, template_folder='templates', static_url_path='projects')
@@ -87,6 +87,26 @@ def users(slug):
         return render_template('projects/project_users.html', project=project)
     else:
         return "<h1>This project is not exist</h1>"
+
+
+@projects.route('/<slug>/create_task', methods=['GET', 'POST'])
+def create_task(slug):
+    project = Project.query.filter_by(slug=slug).first_or_404()
+    if request.method == 'POST':
+        title = request.form['title']
+        description = request.form['description']
+        try:
+            task = Task(title=title, description=description)
+            project.tasks.append(task)
+            db.session.add_all([project, task])
+            db.session.commit()
+            return redirect(url_for('projects.tasks', slug=project.slug))
+        except:
+            print('Something went wrong')
+            print(traceback.format_exc())
+            return '<h1>Something went wrong<h1>' + traceback.format_exc()
+    form = TaskForm()
+    return render_template('projects/create_task.html', form=form, project=project)
 
 
 @projects.route('/all_projects')

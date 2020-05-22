@@ -31,19 +31,22 @@
                 {# Кнопка: Информация #}
                 <a href="{{ url_for('projects.project_info', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Информация</button>
+                            type="button" class="btn btn-default btn-block">Информация
+                    </button>
                 </a>
 
                 {# Кнопка: Задания #}
                 <a href="{{ url_for('projects.tasks', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Задания</button>
+                            type="button" class="btn btn-default btn-block">Задания
+                    </button>
                 </a>
 
                 {# Кнопка: Работники #}
                 <a href="{{ url_for('projects.users', slug=project.slug) }}">
                     <button style="padding-top: 15px; padding-bottom: 15px; font-size: 18px"
-                            type="button" class="btn btn-default btn-block">Работники</button>
+                            type="button" class="btn btn-default btn-block">Работники
+                    </button>
                 </a>
             </div>
 
@@ -58,13 +61,17 @@
                 {# Поле: общая информация и кнопка "Создать проект" #}
                 <div class="row" style="margin-bottom: 3px; margin-top: 0px; padding-top: 0px">
                     <div class="col-md-4" style="margin-bottom: 0px; margin-top: 0px; padding-top: 0px">
-                        <p style="color: #000000; padding-top: 5px; padding-left: 10px; font-weight: 900; font-size: 24px">Задания проекта:</p>
+                        <p style="color: #000000; padding-top: 5px; padding-left: 10px; font-weight: 900; font-size: 24px">
+                            Задания проекта:</p>
                     </div>
 
                     {% if current_user.email == project.created_by %}
-                        <div class="col-md-3 col-md-offset-5" style="margin-bottom: 1px; margin-top: 1px; padding-top: 0px">
-                            <a href="#"><button style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px; font-size: 18px"
-                                type="button" class="btn btn-default btn-block">Создать задание</button>
+                        <div class="col-md-3 col-md-offset-5"
+                             style="margin-bottom: 1px; margin-top: 1px; padding-top: 0px">
+                            <a href="{{ url_for('projects.create_task',slug=project.slug) }}">
+                                <button style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px; font-size: 18px"
+                                        type="button" class="btn btn-default btn-block">Создать задание
+                                </button>
                             </a>
                         </div>
                     {% endif %}
@@ -72,15 +79,17 @@
 
                 {# Поле: информация о задании: название, работник, статус #}
                 <div style="padding-top: 2px; padding-bottom: 2px">
-                  <a href="#">
-                    <button type="button" class="btn btn-sm btn-default btn-block">
-                        <div class="row" style="padding-top: 10px; font-size: 16px; font-weight: 600">
-                            <div class="col-md-4"><p style="text-align: left">Task1</p></div>
-                            <div class="col-md-4"><p style="text-align: center">Danya</p></div>
-                            <div class="col-md-4"><p style="text-align: right">Not finished</p></div>
-                        </div>
-                    </button>
-                  </a>
+                    {% for task in project.tasks %}
+                        <a href="#">
+                            <button type="button" class="btn btn-sm btn-default btn-block">
+                                <div class="row" style="padding-top: 10px; font-size: 16px; font-weight: 600">
+                                    <div class="col-md-4"><p style="text-align: left">{{  task.title }}</p></div>
+                                    <div class="col-md-4"><p style="text-align: center">{{ task.description }}</p></div>
+                                    <div class="col-md-4"><p style="text-align: right">Not finished</p></div>
+                                </div>
+                            </button>
+                        </a>
+                    {% endfor %}
                 </div>
 
                 <p style="margin-bottom: 350px"></p>

@@ -62,9 +62,14 @@ roles_users = db.Table('roles_users',
                        db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
                        )
 
-project_users = db.Table('project_users',
+user_projects = db.Table('user_projects',
                          db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
                          db.Column('project_id', db.Integer(), db.ForeignKey('project.id'))
+                         )
+
+project_tasks = db.Table('project_tasks',
+                         db.Column('project_id', db.Integer(), db.ForeignKey('project.id')),
+                         db.Column('task_id', db.Integer(), db.ForeignKey('task.id'))
                          )
 
 
@@ -74,7 +79,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255), nullable=False)
     active = db.Column(db.Boolean())
     roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
-    projects = db.relationship('Project', secondary=project_users, backref=db.backref('users', lazy='dynamic'))
+    projects = db.relationship('Project', secondary=user_projects, backref=db.backref('users', lazy='dynamic'))
 
     def __repr__(self):
         return f'<User: {self.id}, {self.email}>'
@@ -97,6 +102,7 @@ class Project(db.Model):
     slug = db.Column(db.String(140), unique=True)
     created_by = db.Column(db.String(100))
     created = db.Column(db.DateTime, default=datetime.now)
+    tasks = db.relationship('Task', secondary=project_tasks, backref=db.backref('projects', lazy='dynamic'))
 
     def __init__(self, *args, **kwargs):
         super(Project, self).__init__(*args, **kwargs)
@@ -105,6 +111,18 @@ class Project(db.Model):
     def generate_slug(self):
         if self.name:
             self.slug = slugify(self.name)
+
+    def __repr__(self):
+        return self.name
+
+
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(255))
+
+    def __init__(self, *args, **kwargs):
+        super(Task, self).__init__(*args, **kwargs)
 
     def __repr__(self):
         return self.name
