@@ -12,7 +12,7 @@
 {% block main %}
     {% for project in projects %}
         <p>
-            <a href="{{ url_for('projects.project_detail', slug=project.slug) }}">{{ project.name }}</a>
+            <a href="{{ url_for('projects.project_info', slug=project.slug) }}">{{ project.name }}</a>
         </p>
     {% endfor %}
 {% endblock %}
