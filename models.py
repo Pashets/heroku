@@ -150,14 +150,26 @@ class Task(db.Model):
     :var description: description of this task
     """
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), unique=True)
+    title = db.Column(db.String(100))
     description = db.Column(db.String(255))
+    slug = db.Column(db.String(140))
+    state = db.Column(db.String(100), default='Создана')
+    role = db.Column(db.String(100))
+    deadline = db.Column(db.DateTime)
+    artefacts = db.Column(db.String(255))
+    user_email = db.Column(db.String(100))
+    created = db.Column(db.DateTime, default=datetime.now)
 
     def __init__(self, *args, **kwargs):
         super(Task, self).__init__(*args, **kwargs)
+        self.generate_slug()
+
+    def generate_slug(self):
+        if self.title:
+            self.slug = slugify(self.title)
 
     def __repr__(self):
-        return self.name
+        return self.title
 
 
 @login_manager.user_loader

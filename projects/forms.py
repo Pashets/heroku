@@ -1,4 +1,4 @@
-from wtforms import Form, StringField, TextAreaField, SelectField, FieldList, SelectMultipleField
+from wtforms import Form, StringField, TextAreaField, SelectField, DateField
 
 
 class ProjectForm(Form):
@@ -11,3 +11,6 @@ class ProjectForm(Form):
 class TaskForm(Form):
     title = StringField('Title')
     description = TextAreaField('Description')
+    role = StringField('Role')
+    deadline = DateField('DeadLine')  # format='%Y-%m-%d'
+    artefacts = StringField('Artefacts')

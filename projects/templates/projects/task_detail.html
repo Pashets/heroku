@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ project.name }}: {{ task.title }}
+{% endblock %}
+
+
+{% block styles %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Дополнение к теме -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    {{ super() }}
+
+{% endblock %}
+
+
+{% block main %}
+    <div class="container">
+
+        <div class="row">
+            {# Шапка: информация об проекте #}
+            <nav class="navbar navbar-default" style="margin-bottom: 10px">
+                <p class="text-center" style="font-size: 24px; margin-top: 5px">Информация о таске</p>
+            </nav>
+            <p style="color: #000000; padding-left: 10px; font-weight: 900; font-size: 24px">Общая информация:</p>
+            <p style="color: #000000; padding-left: 10px;">Название таски: {{ task.title }}</p>
+            <p style="color: #000000; padding-left: 10px;">Краткое описание: {{ task.description }}</p>
+            <p style="color: #000000; padding-left: 10px;">Состояние таски: {{ task.state }}</p>
+            <p>
+                {% if not task.user_email and current_user.email not in project.created_by %}
+                    <div>
+                        <form action="{{ url_for('projects.task_detail', slug=project.slug, slug_task=task.slug) }}"
+                              method="post">
+                            <button>Take this project!
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </p>
+            <p style="color: #000000; padding-left: 10px;">Подходящая для таски роль: {{ task.role }}</p>
+            <p style="color: #000000; padding-left: 10px;">Дедлайн таски: {{ task.deadline }}</p>
+            <p style="color: #000000; padding-left: 10px;">Артефакты таски: </p>
+            {% for artefact in artefacts %}
+                <a href="//{{ artefact }}">{{ artefact }}</a>
+            {% endfor %}
+            <p style="color: #000000; padding-left: 10px;">Юзер на таске: {{ task.user_email }}</p>
+            <p style="color: #000000; padding-left: 10px;">Дата создания таски: {{ task.created }}</p>
+            <p style="margin-bottom: 250px"></p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
