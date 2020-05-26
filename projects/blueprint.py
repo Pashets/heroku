@@ -15,6 +15,8 @@ projects = Blueprint('projects', __name__, template_folder='templates', static_u
 @projects.route('/')
 @login_required
 def index():
+    """Index function, which return index project page """
+
     return render_template('projects/index.html',
                            projects=User.query.filter(User.email == current_user.email).first().projects)
 
@@ -22,6 +24,8 @@ def index():
 @projects.route('/create_project', methods=['GET', 'POST'])
 @login_required
 def create_project():
+    """Create project function, which return form to create project"""
+
     if request.method == 'POST':
         name = request.form['name']
         description = request.form['description']
@@ -44,6 +48,8 @@ def create_project():
 
 @projects.route('/<slug>')
 def project_info(slug):
+    """Project info, which return info page to this project"""
+
     project = Project.query.filter(Project.slug == slug).first_or_404()
     if project:
         return render_template('projects/project_info.html', project=project)

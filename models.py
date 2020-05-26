@@ -74,6 +74,15 @@ project_tasks = db.Table('project_tasks',
 
 
 class User(db.Model, UserMixin):
+    """
+    Class User
+    :var id:identification of user
+    :var email: e-mail
+    :var password: password
+    :var active: is user now in web
+    :var roles: role of this user
+    :var projects: projects of this user
+    """
     id = db.Column(db.Integer(), primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(255), nullable=False)
@@ -86,6 +95,12 @@ class User(db.Model, UserMixin):
 
 
 class Role(db.Model, RoleMixin):
+    """
+    Class Role
+    :var id:identification
+    :var name: name of role
+    :var description: description of this role
+    """
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))
@@ -95,6 +110,17 @@ class Role(db.Model, RoleMixin):
 
 
 class Project(db.Model):
+    """
+    Class Project
+    :var id: identification
+    :var name: name of this project
+    :var description: description of this project
+    :var quantity_participants: max quantity users, include author, of this project
+    :var slug: unique link to this project
+    :var created_by: author this project
+    :var created: datetime of creating this project
+    :var tasks: Tasks in this project
+    """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))
@@ -117,6 +143,12 @@ class Project(db.Model):
 
 
 class Task(db.Model):
+    """
+    Class Task
+    :var id: identification
+    :var title: title of this task
+    :var description: description of this task
+    """
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(255))

@@ -11,4 +11,3 @@ app.register_blueprint(projects, url_prefix='/projects')
 
 if __name__ == '__main__':
     app.run()
-

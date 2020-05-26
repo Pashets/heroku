@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sqlAlchemy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sqlAlchemy</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cdrovnin%5Cboldatabase%5Csqlalchemy.py">c:\drovnin\boldatabase\sqlalchemy.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sqlalchemy.orm.html">sqlalchemy.orm</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="sqlAlchemy.html#Artefact">Artefact</a>
+</font></dt><dt><font face="helvetica, arial"><a href="sqlAlchemy.html#Project">Project</a>
+</font></dt><dt><font face="helvetica, arial"><a href="sqlAlchemy.html#Task">Task</a>
+</font></dt><dt><font face="helvetica, arial"><a href="sqlAlchemy.html#User">User</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Artefact">class <strong>Artefact</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Artefact">Artefact</a>(**kwargs)<br>
+&nbsp;<br>
+The&nbsp;base&nbsp;class&nbsp;of&nbsp;the&nbsp;class&nbsp;hierarchy.<br>
+&nbsp;<br>
+When&nbsp;called,&nbsp;it&nbsp;accepts&nbsp;no&nbsp;arguments&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;featureless<br>
+instance&nbsp;that&nbsp;has&nbsp;no&nbsp;instance&nbsp;attributes&nbsp;and&nbsp;cannot&nbsp;be&nbsp;given&nbsp;any.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="sqlAlchemy.html#Artefact">Artefact</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Artefact-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Artefact-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>file</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x52a3838; Artefact&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('artefact', MetaData(bind=None), Column('i...tring(length=45), table=&lt;artefact&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'artefact'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Project">class <strong>Project</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Project">Project</a>(**kwargs)<br>
+&nbsp;<br>
+The&nbsp;base&nbsp;class&nbsp;of&nbsp;the&nbsp;class&nbsp;hierarchy.<br>
+&nbsp;<br>
+When&nbsp;called,&nbsp;it&nbsp;accepts&nbsp;no&nbsp;arguments&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;featureless<br>
+instance&nbsp;that&nbsp;has&nbsp;no&nbsp;instance&nbsp;attributes&nbsp;and&nbsp;cannot&nbsp;be&nbsp;given&nbsp;any.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="sqlAlchemy.html#Project">Project</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Project-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Project-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>children</strong></dt>
+</dl>
+<dl><dt><strong>children2</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x52a3568; Project&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('project', MetaData(bind=None), Column('id...String(length=45), table=&lt;project&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'project'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Task">class <strong>Task</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Task">Task</a>(**kwargs)<br>
+&nbsp;<br>
+The&nbsp;base&nbsp;class&nbsp;of&nbsp;the&nbsp;class&nbsp;hierarchy.<br>
+&nbsp;<br>
+When&nbsp;called,&nbsp;it&nbsp;accepts&nbsp;no&nbsp;arguments&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;featureless<br>
+instance&nbsp;that&nbsp;has&nbsp;no&nbsp;instance&nbsp;attributes&nbsp;and&nbsp;cannot&nbsp;be&nbsp;given&nbsp;any.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="sqlAlchemy.html#Task">Task</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Task-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Task-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>children2</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>project_id</strong></dt>
+</dl>
+<dl><dt><strong>role</strong></dt>
+</dl>
+<dl><dt><strong>time</strong></dt>
+</dl>
+<dl><dt><strong>user_id</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x52a3f10; Task&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('task', MetaData(bind=None), Column('id', ...oreignKey('user.id'), table=&lt;task&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'task'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="User">class <strong>User</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#User">User</a>(**kwargs)<br>
+&nbsp;<br>
+The&nbsp;base&nbsp;class&nbsp;of&nbsp;the&nbsp;class&nbsp;hierarchy.<br>
+&nbsp;<br>
+When&nbsp;called,&nbsp;it&nbsp;accepts&nbsp;no&nbsp;arguments&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;featureless<br>
+instance&nbsp;that&nbsp;has&nbsp;no&nbsp;instance&nbsp;attributes&nbsp;and&nbsp;cannot&nbsp;be&nbsp;given&nbsp;any.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="sqlAlchemy.html#User">User</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="User-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="User-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>children</strong></dt>
+</dl>
+<dl><dt><strong>email</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>role</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x52a3ad8; User&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('user', MetaData(bind=None), Column('id', ...', String(length=45), table=&lt;user&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'user'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>BLANK_SCHEMA</strong> = symbol('blank_schema')<br>
+<strong>Session</strong> = sessionmaker(class_='Session', bind=Engine(mysql...sh=True, autocommit=False, expire_on_commit=True)<br>
+<strong>artefactRole</strong> = Table('task-artefact', MetaData(bind=None), Colu...tefact.id'), table=&lt;task-artefact&gt;), schema=None)<br>
+<strong>engine</strong> = Engine(mysql+mysqlconnector://root:***@localhost:3306/обд)<br>
+<strong>func</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
+<strong>modifier</strong> = &lt;sqlalchemy.sql.functions._FunctionGenerator object&gt;<br>
+<strong>session</strong> = &lt;sqlalchemy.orm.session.Session object&gt;<br>
+<strong>userRole</strong> = Table('project-user', MetaData(bind=None), Colum...y('user.id'), table=&lt;project-user&gt;), schema=None)</td></tr></table>
+</body></html>

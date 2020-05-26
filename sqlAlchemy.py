@@ -1,6 +1,3 @@
-from datetime import datetime
-from time import time
-
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship

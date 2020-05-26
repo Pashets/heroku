@@ -34,6 +34,8 @@ from models import *
 
 
 class AdminMixin:
+    """Class AdminMixin for admin panel"""
+
     def is_accessible(self):
         return current_user.has_role('admin')
 
@@ -42,28 +44,40 @@ class AdminMixin:
 
 
 class BaseModelView(ModelView):
+    """Class BaseModelView for admin panel"""
+
     def on_model_change(self, form, model, is_created):
         model.generate_slug()
         return super(BaseModelView, self).on_model_change(form, model, is_created)
 
 
 class AdminView(AdminMixin, ModelView):
+    """Class AdminView for admin panel"""
+
     pass
 
 
 class HomeAdminView(AdminMixin, AdminIndexView):
+    """Class HomeAdminView for admin panel"""
+
     pass
 
 
 class PostAdminView(AdminMixin, BaseModelView):
+    """Class PostAdminView for admin panel"""
+
     form_columns = ['title', 'body', 'tags']
 
 
 class TagAdminView(AdminMixin, BaseModelView):
+    """Class TagAdminView for admin panel"""
+
     form_columns = ['name', 'posts']
 
 
 class ProjectAdminView(AdminMixin, BaseModelView):
+    """Class ProjectAdminView for admin panel"""
+
     form_columns = ['name', 'description', 'users', 'slug', 'created_by', 'created']
 
 
