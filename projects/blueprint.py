@@ -59,6 +59,8 @@ def project_info(slug):
 
 @projects.route('/<slug>/tasks')
 def tasks(slug):
+    """Tasks in this project, where author can create tasks and user can tke this task"""
+
     project = Project.query.filter(Project.slug == slug).first_or_404()
     if project:
         return render_template('projects/project_tasks.html', project=project)
@@ -70,6 +72,8 @@ def tasks(slug):
 @projects.route('/<slug>/tasks/<slug_task>', methods=['GET', 'POST'])
 @login_required
 def task_detail(slug, slug_task):
+    """Info about this task"""
+
     project = Project.query.filter(Project.slug == slug).first_or_404()
     tasks = project.tasks
     task = False
@@ -96,6 +100,8 @@ def task_detail(slug, slug_task):
 
 @projects.route('/<slug>/users', methods=['GET', 'POST'])
 def users(slug):
+    """All users in this project. Here user can join to the project if quantity of participants allow this"""
+
     project = Project.query.filter(Project.slug == slug).first_or_404()
 
     if request.method == 'POST':
@@ -118,6 +124,8 @@ def users(slug):
 
 @projects.route('/<slug>/create_task', methods=['GET', 'POST'])
 def create_task(slug):
+    """Form to create task"""
+
     project = Project.query.filter_by(slug=slug).first_or_404()
     if request.method == 'POST':
         title = request.form['title']
@@ -141,5 +149,7 @@ def create_task(slug):
 
 @projects.route('/all_projects')
 def all_projects():
+    """All projects"""
+
     projects = Project.query.all()
     return render_template('projects/all_projects.html', projects=projects)

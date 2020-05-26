@@ -2,6 +2,9 @@ from wtforms import Form, StringField, TextAreaField, SelectField, DateField
 
 
 class ProjectForm(Form):
+    """
+    Class ProjectForm
+    """
     name = StringField('Name')
     description = TextAreaField('Description')
     quantity_participants = SelectField(u'Quantity of participants',
@@ -9,6 +12,9 @@ class ProjectForm(Form):
 
 
 class TaskForm(Form):
+    """
+    Class TaskForm
+    """
     title = StringField('Title')
     description = TextAreaField('Description')
     role = StringField('Role')

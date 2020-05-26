@@ -14,16 +14,22 @@ from models import User, Role
 
 @app.route('/')
 def index():
+    """Index function, which return index page """
+
     return render_template('index.html')
 
 
 @app.route('/additionally')
 def additionally():
+    """Additionally function, which return index page """
+
     return render_template('additionally.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
+    """Login function, which return login page """
+
     email = request.form.get('email')
     password = request.form.get('password')
 
@@ -46,6 +52,8 @@ def login_page():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
+    """Register function, which return register page """
+
     email = request.form.get('email')
     password = request.form.get('password')
     password2 = request.form.get('password2')
@@ -71,12 +79,16 @@ def register_page():
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
+    """Logout function, which logout user"""
+
     logout_user()
     return redirect(url_for('index'))
 
 
 @app.after_request
 def redirect_to_signin(response):
+    """Redirect function, which realize redirect"""
+
     if response.status_code == 401:
         return redirect(url_for('login_page') + '?next=' + request.url)
     return response
@@ -84,11 +96,15 @@ def redirect_to_signin(response):
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """404 function, which return 404 page"""
+
     return render_template('404.html'), 404
 
 
 @app.errorhandler(AttributeError)
 def catch_when_registration_end(e):
+    """Catch function, which return problems with registration"""
+
     return redirect(url_for('login_page'))
 
 

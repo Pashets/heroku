@@ -37,6 +37,7 @@
 </font></dt><dt><font face="helvetica, arial"><a href="app.html#PostAdminView">PostAdminView</a>(<a href="app.html#AdminMixin">AdminMixin</a>, <a href="app.html#BaseModelView">BaseModelView</a>)
 </font></dt><dt><font face="helvetica, arial"><a href="app.html#ProjectAdminView">ProjectAdminView</a>(<a href="app.html#AdminMixin">AdminMixin</a>, <a href="app.html#BaseModelView">BaseModelView</a>)
 </font></dt><dt><font face="helvetica, arial"><a href="app.html#TagAdminView">TagAdminView</a>(<a href="app.html#AdminMixin">AdminMixin</a>, <a href="app.html#BaseModelView">BaseModelView</a>)
+</font></dt><dt><font face="helvetica, arial"><a href="app.html#TaskAdminView">TaskAdminView</a>(<a href="app.html#AdminMixin">AdminMixin</a>, <a href="app.html#BaseModelView">BaseModelView</a>)
 </font></dt></dl>
 </dd>
 </dl>
@@ -3510,6 +3511,676 @@ Methods inherited from <a href="flask_admin.actions.html#ActionsMixin">flask_adm
 &nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;the&nbsp;list&nbsp;view.</tt></dd></dl>
 
 <dl><dt><a name="TagAdminView-init_actions"><strong>init_actions</strong></a>(self)</dt><dd><tt>Initialize&nbsp;list&nbsp;of&nbsp;actions&nbsp;for&nbsp;the&nbsp;current&nbsp;administrative&nbsp;view.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TaskAdminView">class <strong>TaskAdminView</strong></a>(<a href="app.html#AdminMixin">AdminMixin</a>, <a href="app.html#BaseModelView">BaseModelView</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TaskAdminView">TaskAdminView</a>(model,&nbsp;session,&nbsp;name=None,&nbsp;category=None,&nbsp;endpoint=None,&nbsp;url=None,&nbsp;static_folder=None,&nbsp;menu_class_name=None,&nbsp;menu_icon_type=None,&nbsp;menu_icon_value=None)<br>
+&nbsp;<br>
+Class&nbsp;<a href="#AdminMixin">AdminMixin</a>&nbsp;for&nbsp;admin&nbsp;panel<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="app.html#TaskAdminView">TaskAdminView</a></dd>
+<dd><a href="app.html#AdminMixin">AdminMixin</a></dd>
+<dd><a href="app.html#BaseModelView">BaseModelView</a></dd>
+<dd><a href="flask_admin.contrib.sqla.view.html#ModelView">flask_admin.contrib.sqla.view.ModelView</a></dd>
+<dd><a href="flask_admin.model.base.html#BaseModelView">flask_admin.model.base.BaseModelView</a></dd>
+<dd><a href="flask_admin.base.html#BaseView">flask_admin.base.BaseView</a></dd>
+<dd><a href="flask_admin.base.html#BaseViewClass">flask_admin.base.BaseViewClass</a></dd>
+<dd><a href="flask_admin.actions.html#ActionsMixin">flask_admin.actions.ActionsMixin</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TaskAdminView-action_view"><strong>action_view</strong></a>(self)</dt><dd><tt>Mass-model&nbsp;action&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-ajax_lookup"><strong>ajax_lookup</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TaskAdminView-ajax_update"><strong>ajax_update</strong></a>(self)</dt><dd><tt>Edits&nbsp;a&nbsp;single&nbsp;column&nbsp;of&nbsp;a&nbsp;record&nbsp;in&nbsp;list&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-create_view"><strong>create_view</strong></a>(self)</dt><dd><tt>Create&nbsp;model&nbsp;view</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-delete_view"><strong>delete_view</strong></a>(self)</dt><dd><tt>Delete&nbsp;model&nbsp;view.&nbsp;Only&nbsp;POST&nbsp;method&nbsp;is&nbsp;allowed.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-details_view"><strong>details_view</strong></a>(self)</dt><dd><tt>Details&nbsp;model&nbsp;view</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-edit_view"><strong>edit_view</strong></a>(self)</dt><dd><tt>Edit&nbsp;model&nbsp;view</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-export"><strong>export</strong></a>(self, export_type)</dt></dl>
+
+<dl><dt><a name="TaskAdminView-index_view"><strong>index_view</strong></a>(self)</dt><dd><tt>List&nbsp;view</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>form_columns</strong> = ['title', 'description', 'state', 'slug', 'role', 'created', 'deadline', 'artefacts', 'user_email']</dl>
+
+<hr>
+Methods inherited from <a href="app.html#AdminMixin">AdminMixin</a>:<br>
+<dl><dt><a name="TaskAdminView-inaccessible_callback"><strong>inaccessible_callback</strong></a>(self, name, **kwargs)</dt></dl>
+
+<dl><dt><a name="TaskAdminView-is_accessible"><strong>is_accessible</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="app.html#AdminMixin">AdminMixin</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="app.html#BaseModelView">BaseModelView</a>:<br>
+<dl><dt><a name="TaskAdminView-on_model_change"><strong>on_model_change</strong></a>(self, form, model, is_created)</dt><dd><tt>Perform&nbsp;some&nbsp;actions&nbsp;before&nbsp;a&nbsp;model&nbsp;is&nbsp;created&nbsp;or&nbsp;updated.<br>
+&nbsp;<br>
+Called&nbsp;from&nbsp;create_model&nbsp;and&nbsp;update_model&nbsp;in&nbsp;the&nbsp;same&nbsp;transaction<br>
+(if&nbsp;it&nbsp;has&nbsp;any&nbsp;meaning&nbsp;for&nbsp;a&nbsp;store&nbsp;backend).<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;does&nbsp;nothing.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;used&nbsp;to&nbsp;create/update&nbsp;model<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;that&nbsp;will&nbsp;be&nbsp;created/updated<br>
+:param&nbsp;is_created:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Will&nbsp;be&nbsp;set&nbsp;to&nbsp;True&nbsp;if&nbsp;model&nbsp;was&nbsp;created&nbsp;and&nbsp;to&nbsp;False&nbsp;if&nbsp;edited</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="flask_admin.contrib.sqla.view.html#ModelView">flask_admin.contrib.sqla.view.ModelView</a>:<br>
+<dl><dt><a name="TaskAdminView-__init__"><strong>__init__</strong></a>(self, model, session, name=None, category=None, endpoint=None, url=None, static_folder=None, menu_class_name=None, menu_icon_type=None, menu_icon_value=None)</dt><dd><tt>Constructor.<br>
+&nbsp;<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;class<br>
+:param&nbsp;session:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SQLAlchemy&nbsp;session<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;name.&nbsp;If&nbsp;not&nbsp;set,&nbsp;defaults&nbsp;to&nbsp;the&nbsp;model&nbsp;name<br>
+:param&nbsp;category:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Category&nbsp;name<br>
+:param&nbsp;endpoint:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Endpoint&nbsp;name.&nbsp;If&nbsp;not&nbsp;set,&nbsp;defaults&nbsp;to&nbsp;the&nbsp;model&nbsp;name<br>
+:param&nbsp;url:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Base&nbsp;URL.&nbsp;If&nbsp;not&nbsp;set,&nbsp;defaults&nbsp;to&nbsp;'/admin/'&nbsp;+&nbsp;endpoint<br>
+:param&nbsp;menu_class_name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Optional&nbsp;class&nbsp;name&nbsp;for&nbsp;the&nbsp;menu&nbsp;item.<br>
+:param&nbsp;menu_icon_type:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Optional&nbsp;icon.&nbsp;Possible&nbsp;icon&nbsp;types:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`flask_admin.consts.ICON_TYPE_GLYPH`&nbsp;-&nbsp;Bootstrap&nbsp;glyph&nbsp;icon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`flask_admin.consts.ICON_TYPE_FONT_AWESOME`&nbsp;-&nbsp;Font&nbsp;Awesome&nbsp;icon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`flask_admin.consts.ICON_TYPE_IMAGE`&nbsp;-&nbsp;Image&nbsp;relative&nbsp;to&nbsp;Flask&nbsp;static&nbsp;directory<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`flask_admin.consts.ICON_TYPE_IMAGE_URL`&nbsp;-&nbsp;Image&nbsp;with&nbsp;full&nbsp;URL<br>
+:param&nbsp;menu_icon_value:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Icon&nbsp;glyph&nbsp;name&nbsp;or&nbsp;URL,&nbsp;depending&nbsp;on&nbsp;`menu_icon_type`&nbsp;setting</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-action_delete"><strong>action_delete</strong></a>(self, ids)</dt></dl>
+
+<dl><dt><a name="TaskAdminView-create_model"><strong>create_model</strong></a>(self, form)</dt><dd><tt>Create&nbsp;model&nbsp;from&nbsp;form.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;instance</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-delete_model"><strong>delete_model</strong></a>(self, model)</dt><dd><tt>Delete&nbsp;model.<br>
+&nbsp;<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;to&nbsp;delete</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_column_names"><strong>get_column_names</strong></a>(self, only_columns, excluded_columns)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;tuples&nbsp;with&nbsp;the&nbsp;model&nbsp;field&nbsp;name&nbsp;and&nbsp;formatted<br>
+field&nbsp;name.<br>
+&nbsp;<br>
+Overridden&nbsp;to&nbsp;handle&nbsp;special&nbsp;columns&nbsp;like&nbsp;InstrumentedAttribute.<br>
+&nbsp;<br>
+:param&nbsp;only_columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List&nbsp;of&nbsp;columns&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;results.&nbsp;If&nbsp;not&nbsp;set,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`scaffold_list_columns`&nbsp;will&nbsp;generate&nbsp;the&nbsp;list&nbsp;from&nbsp;the&nbsp;model.<br>
+:param&nbsp;excluded_columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List&nbsp;of&nbsp;columns&nbsp;to&nbsp;exclude&nbsp;from&nbsp;the&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_count_query"><strong>get_count_query</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;the&nbsp;count&nbsp;query&nbsp;for&nbsp;the&nbsp;model&nbsp;type<br>
+&nbsp;<br>
+A&nbsp;``query(self.<strong>model</strong>).count()``&nbsp;approach&nbsp;produces&nbsp;an&nbsp;excessive<br>
+subquery,&nbsp;so&nbsp;``query(func.count('*'))``&nbsp;should&nbsp;be&nbsp;used&nbsp;instead.<br>
+&nbsp;<br>
+See&nbsp;commit&nbsp;``#45a2723``&nbsp;for&nbsp;details.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_list"><strong>get_list</strong></a>(self, page, sort_column, sort_desc, search, filters, execute=True, page_size=None)</dt><dd><tt>Return&nbsp;records&nbsp;from&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+:param&nbsp;page:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Page&nbsp;number<br>
+:param&nbsp;sort_column:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Sort&nbsp;column&nbsp;name<br>
+:param&nbsp;sort_desc:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Descending&nbsp;or&nbsp;ascending&nbsp;sort<br>
+:param&nbsp;search:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;query<br>
+:param&nbsp;execute:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Execute&nbsp;query&nbsp;immediately?&nbsp;Default&nbsp;is&nbsp;`True`<br>
+:param&nbsp;filters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List&nbsp;of&nbsp;filter&nbsp;tuples<br>
+:param&nbsp;page_size:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;results.&nbsp;Defaults&nbsp;to&nbsp;<a href="flask_admin.contrib.sqla.view.html#ModelView">ModelView</a>'s&nbsp;page_size.&nbsp;Can&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;overriden&nbsp;to&nbsp;change&nbsp;the&nbsp;page_size&nbsp;limit.&nbsp;Removing&nbsp;the&nbsp;page_size<br>
+&nbsp;&nbsp;&nbsp;&nbsp;limit&nbsp;requires&nbsp;setting&nbsp;page_size&nbsp;to&nbsp;0&nbsp;or&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_one"><strong>get_one</strong></a>(self, id)</dt><dd><tt>Return&nbsp;a&nbsp;single&nbsp;model&nbsp;by&nbsp;its&nbsp;id.<br>
+&nbsp;<br>
+Example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#TaskAdminView-get_one">get_one</a>(self,&nbsp;id):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query&nbsp;=&nbsp;self.<a href="#TaskAdminView-get_query">get_query</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;query.filter(self.<strong>model</strong>.id&nbsp;==&nbsp;id).one()<br>
+&nbsp;<br>
+Also&nbsp;see&nbsp;`get_query`&nbsp;for&nbsp;how&nbsp;to&nbsp;filter&nbsp;the&nbsp;list&nbsp;view.<br>
+&nbsp;<br>
+:param&nbsp;id:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;id</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_pk_value"><strong>get_pk_value</strong></a>(self, model)</dt><dd><tt>Return&nbsp;the&nbsp;primary&nbsp;key&nbsp;value&nbsp;from&nbsp;a&nbsp;model&nbsp;<a href="builtins.html#object">object</a>.<br>
+If&nbsp;there&nbsp;are&nbsp;multiple&nbsp;primary&nbsp;keys,&nbsp;they're&nbsp;encoded&nbsp;into&nbsp;string&nbsp;representation.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_query"><strong>get_query</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;query&nbsp;for&nbsp;the&nbsp;model&nbsp;type.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;set&nbsp;a&nbsp;"persistent&nbsp;filter"&nbsp;on&nbsp;an&nbsp;index_view.<br>
+&nbsp;<br>
+Example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;MyView(<a href="flask_admin.contrib.sqla.view.html#ModelView">ModelView</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#TaskAdminView-get_query">get_query</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;super(MyView,&nbsp;self).<a href="#TaskAdminView-get_query">get_query</a>().filter(User.username&nbsp;==&nbsp;current_user.username)<br>
+&nbsp;<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;override&nbsp;this&nbsp;method,&nbsp;don't&nbsp;forget&nbsp;to&nbsp;also&nbsp;override&nbsp;`get_count_query`,&nbsp;for&nbsp;displaying&nbsp;the&nbsp;correct<br>
+item&nbsp;count&nbsp;in&nbsp;the&nbsp;list&nbsp;view,&nbsp;and&nbsp;`get_one`,&nbsp;which&nbsp;is&nbsp;used&nbsp;when&nbsp;retrieving&nbsp;records&nbsp;for&nbsp;the&nbsp;edit&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_sortable_columns"><strong>get_sortable_columns</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;the&nbsp;sortable&nbsp;columns.&nbsp;Key&nbsp;is&nbsp;a&nbsp;model<br>
+field&nbsp;name&nbsp;and&nbsp;value&nbsp;is&nbsp;sort&nbsp;column&nbsp;(for&nbsp;example&nbsp;-&nbsp;attribute).<br>
+&nbsp;<br>
+If&nbsp;`column_sortable_list`&nbsp;is&nbsp;set,&nbsp;will&nbsp;use&nbsp;it.&nbsp;Otherwise,&nbsp;will&nbsp;call<br>
+`scaffold_sortable_columns`&nbsp;to&nbsp;get&nbsp;them&nbsp;from&nbsp;the&nbsp;model.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-handle_filter"><strong>handle_filter</strong></a>(self, filter)</dt><dd><tt>Postprocess&nbsp;(add&nbsp;joins,&nbsp;etc)&nbsp;for&nbsp;a&nbsp;filter.<br>
+&nbsp;<br>
+:param&nbsp;filter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;postprocess</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-handle_view_exception"><strong>handle_view_exception</strong></a>(self, exc)</dt><dd><tt>#&nbsp;Error&nbsp;handler</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-init_search"><strong>init_search</strong></a>(self)</dt><dd><tt>Initialize&nbsp;search.&nbsp;Returns&nbsp;`True`&nbsp;if&nbsp;search&nbsp;is&nbsp;supported&nbsp;for&nbsp;this<br>
+view.<br>
+&nbsp;<br>
+For&nbsp;SQLAlchemy,&nbsp;this&nbsp;will&nbsp;initialize&nbsp;internal&nbsp;fields:&nbsp;list&nbsp;of<br>
+column&nbsp;objects&nbsp;used&nbsp;for&nbsp;filtering,&nbsp;etc.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-is_action_allowed"><strong>is_action_allowed</strong></a>(self, name)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;to&nbsp;allow&nbsp;or&nbsp;disallow&nbsp;actions&nbsp;based<br>
+on&nbsp;some&nbsp;condition.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;only&nbsp;checks&nbsp;if&nbsp;the&nbsp;particular&nbsp;action<br>
+is&nbsp;not&nbsp;in&nbsp;`action_disallowed_list`.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_auto_joins"><strong>scaffold_auto_joins</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;joined&nbsp;tables&nbsp;by&nbsp;going&nbsp;through&nbsp;the<br>
+displayed&nbsp;columns.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_filters"><strong>scaffold_filters</strong></a>(self, name)</dt><dd><tt>Return&nbsp;list&nbsp;of&nbsp;enabled&nbsp;filters</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_form"><strong>scaffold_form</strong></a>(self)</dt><dd><tt>Create&nbsp;form&nbsp;from&nbsp;the&nbsp;model.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_inline_form_models"><strong>scaffold_inline_form_models</strong></a>(self, form_class)</dt><dd><tt>Contribute&nbsp;inline&nbsp;models&nbsp;to&nbsp;the&nbsp;form<br>
+&nbsp;<br>
+:param&nbsp;form_class:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;class</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_list_columns"><strong>scaffold_list_columns</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;columns&nbsp;from&nbsp;the&nbsp;model.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_list_form"><strong>scaffold_list_form</strong></a>(self, widget=None, validators=None)</dt><dd><tt>Create&nbsp;form&nbsp;for&nbsp;the&nbsp;`index_view`&nbsp;using&nbsp;only&nbsp;the&nbsp;columns&nbsp;from<br>
+`self.<strong>column_editable_list</strong>`.<br>
+&nbsp;<br>
+:param&nbsp;widget:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WTForms&nbsp;widget&nbsp;class.&nbsp;Defaults&nbsp;to&nbsp;`XEditableWidget`.<br>
+:param&nbsp;validators:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`form_args`&nbsp;dict&nbsp;with&nbsp;only&nbsp;validators<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'name':&nbsp;{'validators':&nbsp;[required()]}}</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_pk"><strong>scaffold_pk</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;primary&nbsp;key&nbsp;name(s)&nbsp;from&nbsp;a&nbsp;model<br>
+If&nbsp;model&nbsp;has&nbsp;single&nbsp;primary&nbsp;key,&nbsp;will&nbsp;return&nbsp;a&nbsp;string&nbsp;and&nbsp;tuple&nbsp;otherwise</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-scaffold_sortable_columns"><strong>scaffold_sortable_columns</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;sortable&nbsp;columns.<br>
+Key&nbsp;is&nbsp;column&nbsp;name,&nbsp;value&nbsp;is&nbsp;sort&nbsp;column/field.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-search_placeholder"><strong>search_placeholder</strong></a>(self)</dt><dd><tt>Return&nbsp;search&nbsp;placeholder.<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;if&nbsp;set&nbsp;column_labels&nbsp;and&nbsp;column_searchable_list:<br>
+&nbsp;<br>
+class&nbsp;MyModelView(<a href="#BaseModelView">BaseModelView</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;column_labels&nbsp;=&nbsp;dict(name='Name',&nbsp;last_name='Last&nbsp;Name')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;column_searchable_list&nbsp;=&nbsp;('name',&nbsp;'last_name')<br>
+&nbsp;<br>
+placeholder&nbsp;is:&nbsp;"Name,&nbsp;Last&nbsp;Name"</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-update_model"><strong>update_model</strong></a>(self, form, model)</dt><dd><tt>Update&nbsp;model&nbsp;from&nbsp;form.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;instance<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;instance</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_admin.contrib.sqla.view.html#ModelView">flask_admin.contrib.sqla.view.ModelView</a>:<br>
+<dl><dt><strong>column_auto_select_related</strong></dt>
+</dl>
+<dl><dt><strong>column_display_all_relations</strong></dt>
+</dl>
+<dl><dt><strong>column_searchable_list</strong></dt>
+</dl>
+<dl><dt><strong>column_select_related_list</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_admin.contrib.sqla.view.html#ModelView">flask_admin.contrib.sqla.view.ModelView</a>:<br>
+<dl><dt><strong>column_filters</strong> = None</dl>
+
+<dl><dt><strong>column_type_formatters</strong> = {&lt;class 'NoneType'&gt;: &lt;function empty_formatter&gt;, &lt;class 'bool'&gt;: &lt;function bool_formatter&gt;, &lt;class 'list'&gt;: &lt;function list_formatter&gt;, &lt;class 'dict'&gt;: &lt;function dict_formatter&gt;, &lt;enum 'Enum'&gt;: &lt;function enum_formatter&gt;, &lt;class 'sqlalchemy.orm.collections.InstrumentedList'&gt;: &lt;function list_formatter&gt;, &lt;class 'sqlalchemy.ext.associationproxy._AssociationList'&gt;: &lt;function list_formatter&gt;}</dl>
+
+<dl><dt><strong>fast_mass_delete</strong> = False</dl>
+
+<dl><dt><strong>filter_converter</strong> = &lt;flask_admin.contrib.sqla.filters.FilterConverter object&gt;</dl>
+
+<dl><dt><strong>form_choices</strong> = None</dl>
+
+<dl><dt><strong>form_optional_types</strong> = (&lt;class 'sqlalchemy.sql.sqltypes.Boolean'&gt;,)</dl>
+
+<dl><dt><strong>ignore_hidden</strong> = True</dl>
+
+<dl><dt><strong>inline_model_form_converter</strong> = &lt;class 'flask_admin.contrib.sqla.form.InlineModelConverter'&gt;<dd><tt>Inline&nbsp;model&nbsp;form&nbsp;helper.</tt></dl>
+
+<dl><dt><strong>inline_models</strong> = None</dl>
+
+<dl><dt><strong>model_form_converter</strong> = &lt;class 'flask_admin.contrib.sqla.form.AdminModelConverter'&gt;<dd><tt>SQLAlchemy&nbsp;model&nbsp;to&nbsp;form&nbsp;converter</tt></dl>
+
+<hr>
+Methods inherited from <a href="flask_admin.model.base.html#BaseModelView">flask_admin.model.base.BaseModelView</a>:<br>
+<dl><dt><a name="TaskAdminView-action_form"><strong>action_form</strong></a>(self, obj=None)</dt><dd><tt>Instantiate&nbsp;model&nbsp;action&nbsp;form&nbsp;and&nbsp;return&nbsp;it.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-after_model_change"><strong>after_model_change</strong></a>(self, form, model, is_created)</dt><dd><tt>Perform&nbsp;some&nbsp;actions&nbsp;after&nbsp;a&nbsp;model&nbsp;was&nbsp;created&nbsp;or&nbsp;updated&nbsp;and<br>
+committed&nbsp;to&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+Called&nbsp;from&nbsp;create_model&nbsp;after&nbsp;successful&nbsp;database&nbsp;commit.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;does&nbsp;nothing.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;used&nbsp;to&nbsp;create/update&nbsp;model<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;that&nbsp;was&nbsp;created/updated<br>
+:param&nbsp;is_created:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;model&nbsp;was&nbsp;created,&nbsp;False&nbsp;if&nbsp;model&nbsp;was&nbsp;updated</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-after_model_delete"><strong>after_model_delete</strong></a>(self, model)</dt><dd><tt>Perform&nbsp;some&nbsp;actions&nbsp;after&nbsp;a&nbsp;model&nbsp;was&nbsp;deleted&nbsp;and<br>
+committed&nbsp;to&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+Called&nbsp;from&nbsp;delete_model&nbsp;after&nbsp;successful&nbsp;database&nbsp;commit<br>
+(if&nbsp;it&nbsp;has&nbsp;any&nbsp;meaning&nbsp;for&nbsp;a&nbsp;store&nbsp;backend).<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;does&nbsp;nothing.<br>
+&nbsp;<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;that&nbsp;was&nbsp;deleted</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-create_form"><strong>create_form</strong></a>(self, obj=None)</dt><dd><tt>Instantiate&nbsp;model&nbsp;creation&nbsp;form&nbsp;and&nbsp;return&nbsp;it.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-delete_form"><strong>delete_form</strong></a>(self)</dt><dd><tt>Instantiate&nbsp;model&nbsp;delete&nbsp;form&nbsp;and&nbsp;return&nbsp;it.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;behavior.<br>
+&nbsp;<br>
+The&nbsp;delete&nbsp;form&nbsp;originally&nbsp;used&nbsp;a&nbsp;GET&nbsp;request,&nbsp;so&nbsp;delete_form<br>
+accepts&nbsp;both&nbsp;GET&nbsp;and&nbsp;POST&nbsp;request&nbsp;for&nbsp;backwards&nbsp;compatibility.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-edit_form"><strong>edit_form</strong></a>(self, obj=None)</dt><dd><tt>Instantiate&nbsp;model&nbsp;editing&nbsp;form&nbsp;and&nbsp;return&nbsp;it.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_action_form"><strong>get_action_form</strong></a>(self)</dt><dd><tt>Create&nbsp;form&nbsp;class&nbsp;for&nbsp;a&nbsp;model&nbsp;action.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;customized&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_column_name"><strong>get_column_name</strong></a>(self, field)</dt><dd><tt>Return&nbsp;a&nbsp;human-readable&nbsp;column&nbsp;name.<br>
+&nbsp;<br>
+:param&nbsp;field:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;field&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_create_form"><strong>get_create_form</strong></a>(self)</dt><dd><tt>Create&nbsp;form&nbsp;class&nbsp;for&nbsp;model&nbsp;creation&nbsp;view.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;customized&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_delete_form"><strong>get_delete_form</strong></a>(self)</dt><dd><tt>Create&nbsp;form&nbsp;class&nbsp;for&nbsp;model&nbsp;delete&nbsp;view.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;customized&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_detail_value"><strong>get_detail_value</strong></a>(self, context, model, name)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;the&nbsp;detail&nbsp;view<br>
+&nbsp;<br>
+:param&nbsp;context:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:py:class:`jinja2.runtime.Context`<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;instance<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;name</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_details_columns"><strong>get_details_columns</strong></a>(self)</dt><dd><tt>Uses&nbsp;`get_column_names`&nbsp;to&nbsp;get&nbsp;a&nbsp;list&nbsp;of&nbsp;tuples&nbsp;with&nbsp;the&nbsp;model<br>
+field&nbsp;name&nbsp;and&nbsp;formatted&nbsp;name&nbsp;for&nbsp;the&nbsp;columns&nbsp;in&nbsp;`column_details_list`<br>
+and&nbsp;not&nbsp;in&nbsp;`column_details_exclude_list`.&nbsp;If&nbsp;`column_details_list`<br>
+is&nbsp;not&nbsp;set,&nbsp;the&nbsp;columns&nbsp;from&nbsp;`scaffold_list_columns`&nbsp;will&nbsp;be&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_edit_form"><strong>get_edit_form</strong></a>(self)</dt><dd><tt>Create&nbsp;form&nbsp;class&nbsp;for&nbsp;model&nbsp;editing&nbsp;view.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;customized&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_empty_list_message"><strong>get_empty_list_message</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TaskAdminView-get_export_columns"><strong>get_export_columns</strong></a>(self)</dt><dd><tt>Uses&nbsp;`get_column_names`&nbsp;to&nbsp;get&nbsp;a&nbsp;list&nbsp;of&nbsp;tuples&nbsp;with&nbsp;the&nbsp;model<br>
+field&nbsp;name&nbsp;and&nbsp;formatted&nbsp;name&nbsp;for&nbsp;the&nbsp;columns&nbsp;in&nbsp;`column_export_list`<br>
+and&nbsp;not&nbsp;in&nbsp;`column_export_exclude_list`.&nbsp;If&nbsp;`column_export_list`&nbsp;is<br>
+not&nbsp;set,&nbsp;it&nbsp;will&nbsp;attempt&nbsp;to&nbsp;use&nbsp;the&nbsp;columns&nbsp;from&nbsp;`column_list`<br>
+or&nbsp;finally&nbsp;the&nbsp;columns&nbsp;from&nbsp;`scaffold_list_columns`&nbsp;will&nbsp;be&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_export_name"><strong>get_export_name</strong></a>(self, export_type='csv')</dt><dd><tt>:return:&nbsp;The&nbsp;exported&nbsp;csv&nbsp;file&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_export_value"><strong>get_export_value</strong></a>(self, model, name)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;export.<br>
+Allows&nbsp;export&nbsp;to&nbsp;use&nbsp;different&nbsp;(non&nbsp;HTML)&nbsp;formatters.<br>
+&nbsp;<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;instance<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;name</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_filter_arg"><strong>get_filter_arg</strong></a>(self, index, flt)</dt><dd><tt>Given&nbsp;a&nbsp;filter&nbsp;`flt`,&nbsp;return&nbsp;a&nbsp;unique&nbsp;name&nbsp;for&nbsp;that&nbsp;filter&nbsp;in<br>
+this&nbsp;view.<br>
+&nbsp;<br>
+Does&nbsp;not&nbsp;include&nbsp;the&nbsp;`flt[n]_`&nbsp;portion&nbsp;of&nbsp;the&nbsp;filter&nbsp;name.<br>
+&nbsp;<br>
+:param&nbsp;index:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;index&nbsp;in&nbsp;_filters&nbsp;array<br>
+:param&nbsp;flt:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;instance</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_filters"><strong>get_filters</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;filter&nbsp;objects.<br>
+&nbsp;<br>
+If&nbsp;your&nbsp;model&nbsp;backend&nbsp;implementation&nbsp;does&nbsp;not&nbsp;support&nbsp;filters,<br>
+override&nbsp;this&nbsp;method&nbsp;and&nbsp;return&nbsp;`None`.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_form"><strong>get_form</strong></a>(self)</dt><dd><tt>Get&nbsp;form&nbsp;class.<br>
+&nbsp;<br>
+If&nbsp;``self.<strong>form</strong>``&nbsp;is&nbsp;set,&nbsp;will&nbsp;return&nbsp;it&nbsp;and&nbsp;will&nbsp;call<br>
+``self.<strong>scaffold_form</strong>``&nbsp;otherwise.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;customized&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_invalid_value_msg"><strong>get_invalid_value_msg</strong></a>(self, value, filter)</dt><dd><tt>Returns&nbsp;message,&nbsp;which&nbsp;should&nbsp;be&nbsp;printed&nbsp;in&nbsp;case&nbsp;of&nbsp;failed&nbsp;validation.<br>
+:param&nbsp;value:&nbsp;Invalid&nbsp;value<br>
+:param&nbsp;filter:&nbsp;Filter<br>
+:return:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_list_columns"><strong>get_list_columns</strong></a>(self)</dt><dd><tt>Uses&nbsp;`get_column_names`&nbsp;to&nbsp;get&nbsp;a&nbsp;list&nbsp;of&nbsp;tuples&nbsp;with&nbsp;the&nbsp;model<br>
+field&nbsp;name&nbsp;and&nbsp;formatted&nbsp;name&nbsp;for&nbsp;the&nbsp;columns&nbsp;in&nbsp;`column_list`<br>
+and&nbsp;not&nbsp;in&nbsp;`column_exclude_list`.&nbsp;If&nbsp;`column_list`&nbsp;is&nbsp;not&nbsp;set,<br>
+the&nbsp;columns&nbsp;from&nbsp;`scaffold_list_columns`&nbsp;will&nbsp;be&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_list_form"><strong>get_list_form</strong></a>(self)</dt><dd><tt>Get&nbsp;form&nbsp;class&nbsp;for&nbsp;the&nbsp;editable&nbsp;list&nbsp;view.<br>
+&nbsp;<br>
+Uses&nbsp;only&nbsp;validators&nbsp;from&nbsp;`form_args`&nbsp;to&nbsp;build&nbsp;the&nbsp;form&nbsp;class.<br>
+&nbsp;<br>
+Allows&nbsp;overriding&nbsp;the&nbsp;editable&nbsp;list&nbsp;view&nbsp;field/widget.&nbsp;For&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;flask_admin.model.widgets&nbsp;import&nbsp;XEditableWidget<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;CustomWidget(XEditableWidget):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_kwargs(self,&nbsp;subfield,&nbsp;kwargs):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;subfield.type&nbsp;==&nbsp;'TextAreaField':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kwargs['data-type']&nbsp;=&nbsp;'textarea'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kwargs['data-rows']&nbsp;=&nbsp;'20'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;elif:&nbsp;kwargs&nbsp;for&nbsp;other&nbsp;fields<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;kwargs<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;MyModelView(<a href="#BaseModelView">BaseModelView</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#TaskAdminView-get_list_form">get_list_form</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.<a href="#TaskAdminView-scaffold_list_form">scaffold_list_form</a>(widget=CustomWidget)</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_list_row_actions"><strong>get_list_row_actions</strong></a>(self)</dt><dd><tt>Return&nbsp;list&nbsp;of&nbsp;row&nbsp;action&nbsp;objects,&nbsp;each&nbsp;is&nbsp;instance&nbsp;of<br>
+:class:`~flask_admin.model.template.BaseListRowAction`</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_list_value"><strong>get_list_value</strong></a>(self, context, model, name)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;the&nbsp;list&nbsp;view<br>
+&nbsp;<br>
+:param&nbsp;context:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:py:class:`jinja2.runtime.Context`<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Model&nbsp;instance<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;name</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_save_return_url"><strong>get_save_return_url</strong></a>(self, model, is_created=False)</dt><dd><tt>Return&nbsp;url&nbsp;where&nbsp;user&nbsp;is&nbsp;redirected&nbsp;after&nbsp;successful&nbsp;form&nbsp;save.<br>
+&nbsp;<br>
+:param&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Saved&nbsp;<a href="builtins.html#object">object</a><br>
+:param&nbsp;is_created:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Whether&nbsp;new&nbsp;<a href="builtins.html#object">object</a>&nbsp;was&nbsp;created&nbsp;or&nbsp;existing&nbsp;one&nbsp;was&nbsp;updated<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;redirect&nbsp;use&nbsp;to&nbsp;<a href="builtins.html#object">object</a>&nbsp;details&nbsp;view&nbsp;after&nbsp;form&nbsp;save::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;MyModelView(<a href="flask_admin.contrib.sqla.view.html#ModelView">ModelView</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can_view_details&nbsp;=&nbsp;True<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#TaskAdminView-get_save_return_url">get_save_return_url</a>(self,&nbsp;model,&nbsp;is_created):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.<a href="#TaskAdminView-get_url">get_url</a>('.details_view',&nbsp;id=model.id)</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-is_editable"><strong>is_editable</strong></a>(self, name)</dt><dd><tt>Verify&nbsp;if&nbsp;column&nbsp;is&nbsp;editable.<br>
+&nbsp;<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Column&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-is_sortable"><strong>is_sortable</strong></a>(self, name)</dt><dd><tt>Verify&nbsp;if&nbsp;column&nbsp;is&nbsp;sortable.<br>
+&nbsp;<br>
+Not&nbsp;case-sensitive.<br>
+&nbsp;<br>
+:param&nbsp;name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Column&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-is_valid_filter"><strong>is_valid_filter</strong></a>(self, filter)</dt><dd><tt>Verify&nbsp;that&nbsp;the&nbsp;provided&nbsp;filter&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;valid.<br>
+&nbsp;<br>
+Override&nbsp;in&nbsp;model&nbsp;backend&nbsp;implementation&nbsp;to&nbsp;verify&nbsp;if<br>
+the&nbsp;provided&nbsp;filter&nbsp;type&nbsp;is&nbsp;allowed.<br>
+&nbsp;<br>
+:param&nbsp;filter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;verify.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-list_form"><strong>list_form</strong></a>(self, obj=None)</dt><dd><tt>Instantiate&nbsp;model&nbsp;editing&nbsp;form&nbsp;for&nbsp;list&nbsp;view&nbsp;and&nbsp;return&nbsp;it.<br>
+&nbsp;<br>
+Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;behavior.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-on_form_prefill"><strong>on_form_prefill</strong></a>(self, form, id)</dt><dd><tt>Perform&nbsp;additional&nbsp;actions&nbsp;to&nbsp;pre-fill&nbsp;the&nbsp;edit&nbsp;form.<br>
+&nbsp;<br>
+Called&nbsp;from&nbsp;edit_view,&nbsp;if&nbsp;the&nbsp;current&nbsp;action&nbsp;is&nbsp;rendering<br>
+the&nbsp;form&nbsp;rather&nbsp;than&nbsp;receiving&nbsp;client&nbsp;side&nbsp;input,&nbsp;after<br>
+default&nbsp;pre-filling&nbsp;has&nbsp;been&nbsp;performed.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;does&nbsp;nothing.<br>
+&nbsp;<br>
+You&nbsp;only&nbsp;need&nbsp;to&nbsp;override&nbsp;this&nbsp;if&nbsp;you&nbsp;have&nbsp;added&nbsp;custom<br>
+fields&nbsp;that&nbsp;depend&nbsp;on&nbsp;the&nbsp;database&nbsp;contents&nbsp;in&nbsp;a&nbsp;way&nbsp;that<br>
+Flask-admin&nbsp;can't&nbsp;figure&nbsp;out&nbsp;by&nbsp;itself.&nbsp;Fields&nbsp;that&nbsp;were<br>
+added&nbsp;by&nbsp;name&nbsp;of&nbsp;a&nbsp;normal&nbsp;column&nbsp;or&nbsp;relationship&nbsp;should<br>
+work&nbsp;out&nbsp;of&nbsp;the&nbsp;box.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;instance<br>
+:param&nbsp;id:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;is&nbsp;going&nbsp;to&nbsp;be&nbsp;edited</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-on_model_delete"><strong>on_model_delete</strong></a>(self, model)</dt><dd><tt>Perform&nbsp;some&nbsp;actions&nbsp;before&nbsp;a&nbsp;model&nbsp;is&nbsp;deleted.<br>
+&nbsp;<br>
+Called&nbsp;from&nbsp;delete_model&nbsp;in&nbsp;the&nbsp;same&nbsp;transaction<br>
+(if&nbsp;it&nbsp;has&nbsp;any&nbsp;meaning&nbsp;for&nbsp;a&nbsp;store&nbsp;backend).<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;do&nbsp;nothing.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-validate_form"><strong>validate_form</strong></a>(self, form)</dt><dd><tt>Validate&nbsp;the&nbsp;form&nbsp;on&nbsp;submit.<br>
+&nbsp;<br>
+:param&nbsp;form:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Form&nbsp;to&nbsp;validate</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_admin.model.base.html#BaseModelView">flask_admin.model.base.BaseModelView</a>:<br>
+<dl><dt><strong>action_disallowed_list</strong></dt>
+</dl>
+<dl><dt><strong>column_display_pk</strong></dt>
+</dl>
+<dl><dt><strong>column_exclude_list</strong></dt>
+</dl>
+<dl><dt><strong>column_formatters</strong></dt>
+</dl>
+<dl><dt><strong>column_labels</strong></dt>
+</dl>
+<dl><dt><strong>column_list</strong></dt>
+</dl>
+<dl><dt><strong>column_sortable_list</strong></dt>
+</dl>
+<dl><dt><strong>form_excluded_columns</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_admin.model.base.html#BaseModelView">flask_admin.model.base.BaseModelView</a>:<br>
+<dl><dt><strong>can_create</strong> = True</dl>
+
+<dl><dt><strong>can_delete</strong> = True</dl>
+
+<dl><dt><strong>can_edit</strong> = True</dl>
+
+<dl><dt><strong>can_export</strong> = False</dl>
+
+<dl><dt><strong>can_set_page_size</strong> = False</dl>
+
+<dl><dt><strong>can_view_details</strong> = False</dl>
+
+<dl><dt><strong>column_choices</strong> = None</dl>
+
+<dl><dt><strong>column_default_sort</strong> = None</dl>
+
+<dl><dt><strong>column_descriptions</strong> = None</dl>
+
+<dl><dt><strong>column_details_exclude_list</strong> = None</dl>
+
+<dl><dt><strong>column_details_list</strong> = None</dl>
+
+<dl><dt><strong>column_display_actions</strong> = True</dl>
+
+<dl><dt><strong>column_editable_list</strong> = None</dl>
+
+<dl><dt><strong>column_export_exclude_list</strong> = None</dl>
+
+<dl><dt><strong>column_export_list</strong> = None</dl>
+
+<dl><dt><strong>column_extra_row_actions</strong> = None</dl>
+
+<dl><dt><strong>column_formatters_detail</strong> = None</dl>
+
+<dl><dt><strong>column_formatters_export</strong> = None</dl>
+
+<dl><dt><strong>column_type_formatters_detail</strong> = None</dl>
+
+<dl><dt><strong>column_type_formatters_export</strong> = None</dl>
+
+<dl><dt><strong>create_modal</strong> = False</dl>
+
+<dl><dt><strong>create_modal_template</strong> = 'admin/model/modals/create.html'</dl>
+
+<dl><dt><strong>create_template</strong> = 'admin/model/create.html'</dl>
+
+<dl><dt><strong>details_modal</strong> = False</dl>
+
+<dl><dt><strong>details_modal_template</strong> = 'admin/model/modals/details.html'</dl>
+
+<dl><dt><strong>details_template</strong> = 'admin/model/details.html'</dl>
+
+<dl><dt><strong>edit_modal</strong> = False</dl>
+
+<dl><dt><strong>edit_modal_template</strong> = 'admin/model/modals/edit.html'</dl>
+
+<dl><dt><strong>edit_template</strong> = 'admin/model/edit.html'</dl>
+
+<dl><dt><strong>export_max_rows</strong> = 0</dl>
+
+<dl><dt><strong>export_types</strong> = ['csv']</dl>
+
+<dl><dt><strong>form</strong> = None</dl>
+
+<dl><dt><strong>form_ajax_refs</strong> = None</dl>
+
+<dl><dt><strong>form_args</strong> = None</dl>
+
+<dl><dt><strong>form_base_class</strong> = &lt;class 'flask_admin.form.BaseForm'&gt;</dl>
+
+<dl><dt><strong>form_create_rules</strong> = None</dl>
+
+<dl><dt><strong>form_edit_rules</strong> = None</dl>
+
+<dl><dt><strong>form_extra_fields</strong> = None</dl>
+
+<dl><dt><strong>form_overrides</strong> = None</dl>
+
+<dl><dt><strong>form_rules</strong> = None</dl>
+
+<dl><dt><strong>form_widget_args</strong> = None</dl>
+
+<dl><dt><strong>list_template</strong> = 'admin/model/list.html'</dl>
+
+<dl><dt><strong>named_filter_urls</strong> = False</dl>
+
+<dl><dt><strong>page_size</strong> = 20</dl>
+
+<dl><dt><strong>simple_list_pager</strong> = False</dl>
+
+<hr>
+Methods inherited from <a href="flask_admin.base.html#BaseView">flask_admin.base.BaseView</a>:<br>
+<dl><dt><a name="TaskAdminView-create_blueprint"><strong>create_blueprint</strong></a>(self, admin)</dt><dd><tt>Create&nbsp;Flask&nbsp;blueprint.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-get_url"><strong>get_url</strong></a>(self, endpoint, **kwargs)</dt><dd><tt>Generate&nbsp;URL&nbsp;for&nbsp;the&nbsp;endpoint.&nbsp;If&nbsp;you&nbsp;want&nbsp;to&nbsp;customize&nbsp;URL&nbsp;generation<br>
+logic&nbsp;(persist&nbsp;some&nbsp;query&nbsp;string&nbsp;argument,&nbsp;for&nbsp;example),&nbsp;this&nbsp;is<br>
+right&nbsp;place&nbsp;to&nbsp;do&nbsp;it.<br>
+&nbsp;<br>
+:param&nbsp;endpoint:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Flask&nbsp;endpoint&nbsp;name<br>
+:param&nbsp;kwargs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Arguments&nbsp;for&nbsp;`url_for`</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-is_visible"><strong>is_visible</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;if&nbsp;you&nbsp;want&nbsp;dynamically&nbsp;hide&nbsp;or&nbsp;show&nbsp;administrative&nbsp;views<br>
+from&nbsp;Flask-Admin&nbsp;menu&nbsp;structure<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;item&nbsp;is&nbsp;visible&nbsp;in&nbsp;menu.<br>
+&nbsp;<br>
+Please&nbsp;note&nbsp;that&nbsp;item&nbsp;should&nbsp;be&nbsp;both&nbsp;visible&nbsp;and&nbsp;accessible&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;menu.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-render"><strong>render</strong></a>(self, template, **kwargs)</dt><dd><tt>Render&nbsp;template<br>
+&nbsp;<br>
+:param&nbsp;template:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Template&nbsp;path&nbsp;to&nbsp;render<br>
+:param&nbsp;kwargs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Template&nbsp;arguments</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="flask_admin.actions.html#ActionsMixin">flask_admin.actions.ActionsMixin</a>:<br>
+<dl><dt><a name="TaskAdminView-get_actions_list"><strong>get_actions_list</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;and&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;allowed&nbsp;actions.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-handle_action"><strong>handle_action</strong></a>(self, return_view=None)</dt><dd><tt>Handle&nbsp;action&nbsp;request.<br>
+&nbsp;<br>
+:param&nbsp;return_view:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;of&nbsp;the&nbsp;view&nbsp;to&nbsp;return&nbsp;to&nbsp;after&nbsp;the&nbsp;request.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;not&nbsp;provided,&nbsp;will&nbsp;return&nbsp;user&nbsp;to&nbsp;the&nbsp;return&nbsp;url&nbsp;in&nbsp;the&nbsp;form<br>
+&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;the&nbsp;list&nbsp;view.</tt></dd></dl>
+
+<dl><dt><a name="TaskAdminView-init_actions"><strong>init_actions</strong></a>(self)</dt><dd><tt>Initialize&nbsp;list&nbsp;of&nbsp;actions&nbsp;for&nbsp;the&nbsp;current&nbsp;administrative&nbsp;view.</tt></dd></dl>
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
