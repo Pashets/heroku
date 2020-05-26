@@ -72,7 +72,7 @@
                         <div class="col-md-3 col-md-offset-5"
                              style="margin-bottom: 1px; margin-top: 1px; padding-top: 0px">
                             <form action="{{ url_for('projects.users', slug=project.slug) }}" method="post">
-                                {% if project.quantity_participants<project.users.all()|length %}
+                                {% if project.quantity_participants<=project.users.all()|length %}
                                     <button style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px; font-size: 18px"
                                             type="submit" class="btn btn-default btn-block" disabled>Max quantity of
                                         participants is {{ project.quantity_participants }}

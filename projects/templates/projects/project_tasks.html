@@ -80,12 +80,12 @@
                 {# Поле: информация о задании: название, работник, статус #}
                 <div style="padding-top: 2px; padding-bottom: 2px">
                     {% for task in project.tasks %}
-                        <a href="#">
+                        <a href="{{ url_for('projects.task_detail', slug=project.slug, slug_task=task.slug) }}">
                             <button type="button" class="btn btn-sm btn-default btn-block">
                                 <div class="row" style="padding-top: 10px; font-size: 16px; font-weight: 600">
-                                    <div class="col-md-4"><p style="text-align: left">{{  task.title }}</p></div>
+                                    <div class="col-md-4"><p style="text-align: left">{{ task.title }}</p></div>
                                     <div class="col-md-4"><p style="text-align: center">{{ task.description }}</p></div>
-                                    <div class="col-md-4"><p style="text-align: right">Not finished</p></div>
+                                    <div class="col-md-4"><p style="text-align: right">{{ task.state }}</p></div>
                                 </div>
                             </button>
                         </a>

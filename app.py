@@ -67,12 +67,17 @@ class ProjectAdminView(AdminMixin, BaseModelView):
     form_columns = ['name', 'description', 'users', 'slug', 'created_by', 'created']
 
 
+class TaskAdminView(AdminMixin, BaseModelView):
+    form_columns = ['title', 'description', 'state', 'slug', 'role', 'created', 'deadline', 'artefacts', 'user_email']
+
+
 admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminView(name='Home'))
 admin.add_view(PostAdminView(Post, db.session))
 admin.add_view(TagAdminView(Tag, db.session))
 admin.add_view(AdminView(User, db.session))
 admin.add_view(AdminView(Role, db.session))
 admin.add_view(ProjectAdminView(Project, db.session))
+admin.add_view(TaskAdminView(Task, db.session))
 
 ### Flask-security
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)

@@ -51,15 +51,6 @@ def project_info(slug):
         return "<h1>This project is not exist</h1>"
 
 
-# @projects.route('/<slug>/info')
-# def project_info(slug):
-#     project = Project.query.filter(Project.slug == slug).first_or_404()
-#     if project:
-#         return render_template('projects/project_info.html', project=project)
-#     else:
-#         return "<h1>This project is not exist</h1>"
-
-
 @projects.route('/<slug>/tasks')
 def tasks(slug):
     project = Project.query.filter(Project.slug == slug).first_or_404()
@@ -69,11 +60,38 @@ def tasks(slug):
         return "<h1>This project is not exist</h1>"
 
 
+# Печалька!
+@projects.route('/<slug>/tasks/<slug_task>', methods=['GET', 'POST'])
+@login_required
+def task_detail(slug, slug_task):
+    project = Project.query.filter(Project.slug == slug).first_or_404()
+    tasks = project.tasks
+    task = False
+    for i in tasks:
+        if i.slug == slug_task:
+            task = i
+
+    if request.method == 'POST':
+        try:
+            task = Task.query.filter(Task.slug == slug_task).first()
+            task.user_email = current_user.email
+            db.session.add(task)
+            db.session.commit()
+        except:
+            print(traceback.format_exc())
+
+    if project and task:
+        artefacts_string: str = task.artefacts
+        artefacts = artefacts_string.split()
+        return render_template('projects/task_detail.html', project=project, task=task, artefacts=artefacts)
+    else:
+        return "<h1>This project or/and task is/are not exist</h1>"
+
+
 @projects.route('/<slug>/users', methods=['GET', 'POST'])
 def users(slug):
     project = Project.query.filter(Project.slug == slug).first_or_404()
 
-    print(project.users.all())
     if request.method == 'POST':
         try:
             if current_user.is_anonymous:
@@ -98,8 +116,11 @@ def create_task(slug):
     if request.method == 'POST':
         title = request.form['title']
         description = request.form['description']
+        role = request.form['role']
+        deadline = request.form['deadline']
+        artefacts = request.form['artefacts']
         try:
-            task = Task(title=title, description=description)
+            task = Task(title=title, description=description, role=role, deadline=deadline, artefacts=artefacts)
             project.tasks.append(task)
             db.session.add_all([project, task])
             db.session.commit()
