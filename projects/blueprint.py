@@ -68,7 +68,6 @@ def tasks(slug):
         return "<h1>This project is not exist</h1>"
 
 
-# Печалька!
 @projects.route('/<slug>/tasks/<slug_task>', methods=['GET', 'POST'])
 @login_required
 def task_detail(slug, slug_task):
