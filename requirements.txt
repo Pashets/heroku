@@ -80,7 +80,7 @@ pytz==2020.1
 pywin32-ctypes==0.2.0
 PyYAML==5.3
 requests==2.23.0
-rsa==4.0
+rsa==4.1
 rtorrent-python==0.2.9
 ruamel.yaml==0.16.10
 ruamel.yaml.clib==0.2.0
