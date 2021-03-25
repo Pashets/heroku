@@ -78,7 +78,7 @@ python-dateutil==2.8.1
 python-editor==1.0.4
 pytz==2020.1
 pywin32-ctypes==0.2.0
-PyYAML==5.3
+PyYAML==5.4
 requests==2.23.0
 rsa==4.0
 rtorrent-python==0.2.9
