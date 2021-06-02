@@ -104,7 +104,7 @@ torrentutils==0.6.0
 tqdm==4.42.1
 trafaret==2.0.2
 trafaret-config==2.0.2
-urllib3==1.25.8
+urllib3==1.26.5
 uTorrent.Py==0.1.1
 vext==0.7.3
 vext.libtorrent==0.6.1
